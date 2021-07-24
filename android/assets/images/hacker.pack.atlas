@@ -1,0 +1,879 @@
+
+hacker.pack.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+binary-background
+  rotate: false
+  xy: 2, 135
+  size: 886, 886
+  orig: 886, 886
+  offset: 0, 0
+  index: -1
+bitcoin-logo
+  rotate: false
+  xy: 890, 642
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+call-another-hacker
+  rotate: false
+  xy: 952, 441
+  size: 30, 40
+  orig: 30, 40
+  offset: 0, 0
+  index: -1
+call-another-hacker-disabled
+  rotate: false
+  xy: 890, 357
+  size: 30, 40
+  orig: 30, 40
+  offset: 0, 0
+  index: -1
+correct-indicator-1
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+correct-indicator-9
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+wrong-indicator-1
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+wrong-indicator-9
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+ddem-probability-algorithm
+  rotate: false
+  xy: 952, 483
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+ddem-probability-algorithm-disabled
+  rotate: false
+  xy: 890, 399
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+music-off
+  rotate: false
+  xy: 890, 891
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+music-on
+  rotate: false
+  xy: 890, 759
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+playMenuButton
+  rotate: false
+  xy: 890, 525
+  size: 115, 115
+  orig: 115, 115
+  offset: 0, 0
+  index: -1
+ssh-into-a-supercomputer
+  rotate: false
+  xy: 890, 483
+  size: 60, 40
+  orig: 60, 40
+  offset: 0, 0
+  index: -1
+ssh-into-a-supercomputer-disabled
+  rotate: false
+  xy: 890, 441
+  size: 60, 40
+  orig: 60, 40
+  offset: 0, 0
+  index: -1
+
+hacker.pack2.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+correct-indicator-2
+  rotate: false
+  xy: 2, 268
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+correct-indicator-3
+  rotate: false
+  xy: 2, 135
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+correct-indicator-7
+  rotate: false
+  xy: 2, 135
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+correct-indicator-4
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+helpButton-active
+  rotate: false
+  xy: 602, 707
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+helpButton-inactive
+  rotate: false
+  xy: 2, 608
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+highScores-active
+  rotate: false
+  xy: 254, 608
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+highScores-inactive
+  rotate: false
+  xy: 506, 605
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+optionsButton-active
+  rotate: false
+  xy: 758, 605
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+optionsButton-inactive
+  rotate: false
+  xy: 2, 506
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+playButton-active
+  rotate: false
+  xy: 254, 506
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+playButton-inactive
+  rotate: false
+  xy: 506, 503
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+playScreenButton
+  rotate: false
+  xy: 2, 710
+  size: 298, 97
+  orig: 298, 97
+  offset: 0, 0
+  index: -1
+playScreenButton-correct
+  rotate: false
+  xy: 302, 710
+  size: 298, 97
+  orig: 298, 97
+  offset: 0, 0
+  index: -1
+progress-bar-1
+  rotate: false
+  xy: 2, 973
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-10
+  rotate: false
+  xy: 512, 932
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-11
+  rotate: false
+  xy: 682, 932
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-12
+  rotate: false
+  xy: 852, 932
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-13
+  rotate: false
+  xy: 2, 891
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-14
+  rotate: false
+  xy: 172, 891
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-15
+  rotate: false
+  xy: 342, 891
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-16
+  rotate: false
+  xy: 512, 891
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-17
+  rotate: false
+  xy: 682, 891
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-18
+  rotate: false
+  xy: 852, 891
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-19
+  rotate: false
+  xy: 2, 850
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-2
+  rotate: false
+  xy: 172, 973
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-20
+  rotate: false
+  xy: 172, 850
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-21
+  rotate: false
+  xy: 342, 850
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-22
+  rotate: false
+  xy: 512, 850
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-23
+  rotate: false
+  xy: 682, 850
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-24
+  rotate: false
+  xy: 852, 850
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-25
+  rotate: false
+  xy: 2, 809
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-26
+  rotate: false
+  xy: 172, 809
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-27
+  rotate: false
+  xy: 342, 809
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-28
+  rotate: false
+  xy: 512, 809
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-29
+  rotate: false
+  xy: 682, 809
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-3
+  rotate: false
+  xy: 342, 973
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-30
+  rotate: false
+  xy: 852, 809
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-4
+  rotate: false
+  xy: 512, 973
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-5
+  rotate: false
+  xy: 682, 973
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-6
+  rotate: false
+  xy: 852, 973
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-7
+  rotate: false
+  xy: 2, 932
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-8
+  rotate: false
+  xy: 172, 932
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+progress-bar-9
+  rotate: false
+  xy: 342, 932
+  size: 168, 39
+  orig: 168, 39
+  offset: 0, 0
+  index: -1
+returnToMenu-active
+  rotate: false
+  xy: 758, 503
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+returnToMenu-inactive
+  rotate: false
+  xy: 2, 404
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+tryAgain-active
+  rotate: false
+  xy: 254, 404
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+tryAgain-inactive
+  rotate: false
+  xy: 506, 401
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+
+hacker.pack3.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+correct-indicator-5
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+enterCodename
+  rotate: false
+  xy: 2, 135
+  size: 886, 886
+  orig: 886, 886
+  offset: 0, 0
+  index: -1
+
+hacker.pack4.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+correct-indicator-6
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+highScores-bg
+  rotate: false
+  xy: 2, 135
+  size: 886, 886
+  orig: 886, 886
+  offset: 0, 0
+  index: -1
+
+hacker.pack5.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+correct-indicator-8
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+loading-screen
+  rotate: false
+  xy: 2, 135
+  size: 886, 886
+  orig: 886, 886
+  offset: 0, 0
+  index: -1
+
+hacker.pack6.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+mainMenu-bg
+  rotate: false
+  xy: 2, 135
+  size: 886, 886
+  orig: 886, 886
+  offset: 0, 0
+  index: -1
+wrong-indicator-2
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+
+hacker.pack7.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+on-off
+  rotate: false
+  xy: 2, 135
+  size: 886, 886
+  orig: 886, 886
+  offset: 0, 0
+  index: -1
+wrong-indicator-3
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+wrong-indicator-7
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+
+hacker.pack8.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+splashScreen
+  rotate: false
+  xy: 2, 135
+  size: 886, 886
+  orig: 886, 886
+  offset: 0, 0
+  index: -1
+wrong-indicator-4
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+
+hacker.pack9.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+actions-1
+  rotate: false
+  xy: 2, 135
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+wrong-indicator-5
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+
+hacker.pack10.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+actions-2
+  rotate: false
+  xy: 2, 135
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+wrong-indicator-6
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+
+hacker.pack11.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+actions-3
+  rotate: false
+  xy: 2, 135
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+wrong-indicator-8
+  rotate: false
+  xy: 2, 2
+  size: 885, 131
+  orig: 885, 131
+  offset: 0, 0
+  index: -1
+
+hacker.pack12.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+easy
+  rotate: false
+  xy: 2, 2
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+
+hacker.pack13.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+gameOver
+  rotate: false
+  xy: 2, 2
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+
+hacker.pack14.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+hard
+  rotate: false
+  xy: 2, 2
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+
+hacker.pack15.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+instructions-1
+  rotate: false
+  xy: 2, 2
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+
+hacker.pack16.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+instructions-2
+  rotate: false
+  xy: 2, 2
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+
+hacker.pack17.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+instructions-3
+  rotate: false
+  xy: 2, 2
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+
+hacker.pack18.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+medium
+  rotate: false
+  xy: 2, 2
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+
+hacker.pack19.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+playScreenBG
+  rotate: false
+  xy: 2, 2
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+
+hacker.pack20.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+show-image
+  rotate: false
+  xy: 2, 2
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+
+hacker.pack21.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+youWin
+  rotate: false
+  xy: 2, 2
+  size: 885, 885
+  orig: 885, 885
+  offset: 0, 0
+  index: -1
+
+hacker.pack22.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+life-animation-1
+  rotate: false
+  xy: 2, 782
+  size: 665, 193
+  orig: 665, 193
+  offset: 0, 0
+  index: -1
+life-animation-2
+  rotate: false
+  xy: 2, 587
+  size: 665, 193
+  orig: 665, 193
+  offset: 0, 0
+  index: -1
+life-animation-3
+  rotate: false
+  xy: 2, 392
+  size: 665, 193
+  orig: 665, 193
+  offset: 0, 0
+  index: -1
+life-animation-4
+  rotate: false
+  xy: 2, 197
+  size: 665, 193
+  orig: 665, 193
+  offset: 0, 0
+  index: -1
+life-animation-5
+  rotate: false
+  xy: 2, 2
+  size: 665, 193
+  orig: 665, 193
+  offset: 0, 0
+  index: -1
+
+hacker.pack23.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+easy-active
+  rotate: false
+  xy: 2, 402
+  size: 516, 198
+  orig: 516, 198
+  offset: 0, 0
+  index: -1
+easy-inactive
+  rotate: false
+  xy: 2, 202
+  size: 516, 198
+  orig: 516, 198
+  offset: 0, 0
+  index: -1
+hard-active
+  rotate: false
+  xy: 2, 2
+  size: 516, 198
+  orig: 516, 198
+  offset: 0, 0
+  index: -1
+life-animation-6
+  rotate: false
+  xy: 2, 797
+  size: 665, 193
+  orig: 665, 193
+  offset: 0, 0
+  index: -1
+life-animation-7
+  rotate: false
+  xy: 2, 602
+  size: 665, 193
+  orig: 665, 193
+  offset: 0, 0
+  index: -1
+
+hacker.pack24.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+hard-inactive
+  rotate: false
+  xy: 2, 402
+  size: 516, 198
+  orig: 516, 198
+  offset: 0, 0
+  index: -1
+medium-active
+  rotate: false
+  xy: 2, 202
+  size: 516, 198
+  orig: 516, 198
+  offset: 0, 0
+  index: -1
+medium-inactive
+  rotate: false
+  xy: 2, 2
+  size: 516, 198
+  orig: 516, 198
+  offset: 0, 0
+  index: -1

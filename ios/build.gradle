@@ -1,0 +1,27 @@
+sourceSets.main.java.srcDirs = [ "src/" ]
+
+sourceCompatibility = '1.7'
+
+dependencies {
+    implementation files('lib\\commons-codec-1.15.jar')
+	implementation files('lib\\commons-codec-1.15.jar')
+	implementation files('lib\\commons-collections4-4.4.jar')
+	implementation files('lib\\commons-math3-3.6.1.jar')
+	implementation files('lib\\SparseBitSet-1.2.jar')
+}
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+ext {
+	mainClassName = "com.mygdx.game.IOSLauncher"
+}
+
+launchIPhoneSimulator.dependsOn build
+launchIPadSimulator.dependsOn build
+launchIOSDevice.dependsOn build
+createIPA.dependsOn build
+
+robovm {
+	archs = "thumbv7:arm64"
+}
+
+eclipse.project.name = appName + "-ios"

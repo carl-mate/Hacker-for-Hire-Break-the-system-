@@ -27,7 +27,7 @@ public class Indicator {
         Util.drawTextureRegion(
                 batch,
                 (TextureRegion) Assets.instance.playScreenAssets.correctIndicatorAnimation.getKeyFrame(elapsedTime),
-                new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 - 160),
+                new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 - 100),
                 INDICATOR_CENTER);
     }
 
@@ -36,7 +36,7 @@ public class Indicator {
         Util.drawTextureRegion(
                 batch,
                 (TextureRegion) Assets.instance.playScreenAssets.wrongIndicatorAnimation.getKeyFrame(elapsedTime),
-                new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 - 160),
+                new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 - 100),
                 INDICATOR_CENTER);
     }
 

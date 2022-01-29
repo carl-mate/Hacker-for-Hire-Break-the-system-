@@ -17,7 +17,8 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
-
+import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.math.Rectangle;
 import java.io.InputStream;
 import java.util.HashMap;
 
@@ -34,7 +35,6 @@ public class Assets implements Disposable, AssetErrorListener {
     public SoundClass soundClass;
     public ResourcesFilePath resourcesFilePath;
     public Font font;
-
     private AssetManager assetManager;
 
     private Assets() {
@@ -123,7 +123,7 @@ public class Assets implements Disposable, AssetErrorListener {
             instructionsFont = glitchEsportsFontGenerator.generateFont(instructionsFontParameter);
 
             usernameFontParameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-            usernameFontParameter.size = 50;
+            usernameFontParameter.size = 35;
             usernameFontParameter.color = Color.valueOf("11d5a6");
             usernameFont = glitchEsportsFontGenerator.generateFont(usernameFontParameter);
 
@@ -143,22 +143,22 @@ public class Assets implements Disposable, AssetErrorListener {
             actionRedFont = glitchEsportsFontGenerator.generateFont(actionRedFontParameter);
 
             questionFontParameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-            questionFontParameter.size = 25;
+            questionFontParameter.size = 18;
             questionFontParameter.color = Color.valueOf("13e3d0");
             questionFont = glitchEsportsFontGenerator.generateFont(questionFontParameter);
 
             choicesFontParameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-            choicesFontParameter.size = 16;
+            choicesFontParameter.size = 12;
             choicesFontParameter.color = Color.valueOf("13e3d0");
             choicesFont = glitchEsportsFontGenerator.generateFont(choicesFontParameter);
 
             bitcoinsFontParameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-            bitcoinsFontParameter.size = 40;
+            bitcoinsFontParameter.size = 30;
             bitcoinsFontParameter.color = Color.valueOf("13e3d0");
             bitcoinsFont = glitchEsportsFontGenerator.generateFont(bitcoinsFontParameter);
 
             percentageFontParameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-            percentageFontParameter.size = 25;
+            percentageFontParameter.size = 20;
             percentageFontParameter.color = Color.valueOf("13e3d0");
             percentageFont = glitchEsportsFontGenerator.generateFont(percentageFontParameter);
 
@@ -168,7 +168,7 @@ public class Assets implements Disposable, AssetErrorListener {
             score30Font = dsDigibFontGenerator.generateFont(score30FontParameter);
 
             score100FontParameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-            score100FontParameter.size = 100;
+            score100FontParameter.size = 80;
             score100FontParameter.color = Color.valueOf("13e3d0");
             score100Font = dsDigibFontGenerator.generateFont(score100FontParameter);
 
@@ -189,7 +189,6 @@ public class Assets implements Disposable, AssetErrorListener {
         }
 
         public void drawGlitchEsportsFont(SpriteBatch batch, String type, String text) {
-
             switch (type) {
                 case "highScoreFontOne":
                     glyphLayout.setText(highScoreFont, text);
@@ -229,31 +228,15 @@ public class Assets implements Disposable, AssetErrorListener {
                     break;
                 case "actionBlue":
                     glyphLayout.setText(actionBlueFont, text);
-                    actionBlueFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 14, (viewport.getCamera().viewportHeight - glyphLayout.height) - 120);
+                    actionBlueFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 18, (viewport.getCamera().viewportHeight - glyphLayout.height) - 90);
                     break;
                 case "actionRed":
                     glyphLayout.setText(actionRedFont, text);
-                    actionRedFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 14, (viewport.getCamera().viewportHeight - glyphLayout.height) - 120);
+                    actionRedFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 18, (viewport.getCamera().viewportHeight - glyphLayout.height) - 90);
                     break;
                 case "question":
                     glyphLayout.setText(questionFont, text);
                     questionFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 2, (viewport.getCamera().viewportHeight + glyphLayout.height) / 2);
-                    break;
-                case "choiceA":
-                    glyphLayout.setText(choicesFont, text);
-                    choicesFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 5.5f, (viewport.getCamera().viewportHeight + glyphLayout.height + 20) / 4 - 20);
-                    break;
-                case "choiceB":
-                    glyphLayout.setText(choicesFont, text);
-                    choicesFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 1.25f, (viewport.getCamera().viewportHeight + glyphLayout.height + 20) / 4 - 20);
-                    break;
-                case "choiceC":
-                    glyphLayout.setText(choicesFont, text);
-                    choicesFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 5.5f, (viewport.getCamera().viewportHeight + glyphLayout.height + 20) / 4 - 145);
-                    break;
-                case "choiceD":
-                    glyphLayout.setText(choicesFont, text);
-                    choicesFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 1.25f, (viewport.getCamera().viewportHeight + glyphLayout.height + 20) / 4 - 145);
                     break;
                 case "bitcoins":
                     glyphLayout.setText(bitcoinsFont, text);
@@ -261,28 +244,51 @@ public class Assets implements Disposable, AssetErrorListener {
                     break;
                 case "percentageA":
                     glyphLayout.setText(percentageFont, text);
-                    percentageFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 4.2f, (viewport.getCamera().viewportHeight - glyphLayout.height) / 4 - 60);
+                    percentageFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width * 2) / 4, (viewport.getCamera().viewportHeight - glyphLayout.height) / 3.8f - 36);
                     break;
                 case "percentageB":
                     glyphLayout.setText(percentageFont, text);
-                    percentageFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 1.30f, (viewport.getCamera().viewportHeight - glyphLayout.height) / 4 - 60);
+                    percentageFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width / 2) / 1.35f, (viewport.getCamera().viewportHeight - glyphLayout.height) / 3.8f - 36);
                     break;
                 case "percentageC":
                     glyphLayout.setText(percentageFont, text);
-                    percentageFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 4.2f, (viewport.getCamera().viewportHeight - glyphLayout.height) / 4 - 185);
+                    percentageFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width * 2) / 4, (viewport.getCamera().viewportHeight - glyphLayout.height) / 4 - 138);
                     break;
                 case "percentageD":
                     glyphLayout.setText(percentageFont, text);
-                    percentageFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 1.30f, (viewport.getCamera().viewportHeight - glyphLayout.height) / 4 - 185);
+                    percentageFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width / 2) / 1.35f, (viewport.getCamera().viewportHeight - glyphLayout.height) / 4 - 138);
                     break;
 
             }
+        }
 
+        //Overload method for Questions and Choices which require bounding boxes
+        public void drawGlitchEsportsFont(SpriteBatch batch, String type, String text, Rectangle bounds) {
+            switch (type) {
+                case "question":
+                    drawCentered(questionFont, batch, text, bounds);
+                    break;
+                case "choiceA":
+                case "choiceB":
+                case "choiceC":
+                case "choiceD":
+                    drawCentered(choicesFont, batch, text, bounds);
+            }
+        }
 
+        private void drawCentered(BitmapFont font, SpriteBatch spriteBatch, String text, Rectangle bounds) {
+            glyphLayout.setText(font, text, font.getColor(), bounds.width, Align.center, true);
+            font.draw(
+                    spriteBatch,
+                    text,
+                    bounds.x,
+                    bounds.y + bounds.height / 2f + glyphLayout.height / 2f,
+                    bounds.width,
+                    Align.center,
+                    true);
         }
 
         public void drawDSDigibFont(SpriteBatch batch, String type, String text) {
-
             switch (type) {
                 case "loadingProgress":
                     glyphLayout.setText(loadingProgressFont, text);
@@ -290,7 +296,7 @@ public class Assets implements Disposable, AssetErrorListener {
                     break;
                 case "score30":
                     glyphLayout.setText(score30Font, text);
-                    score30Font.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 1.10f, (viewport.getCamera().viewportHeight - glyphLayout.height) - 5);
+                    score30Font.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 1.10f, (viewport.getCamera().viewportHeight - glyphLayout.height) + 5);
                     break;
                 case "score100":
                     glyphLayout.setText(score100Font, text);
@@ -298,16 +304,15 @@ public class Assets implements Disposable, AssetErrorListener {
                     break;
                 case "elapsedTime":
                     glyphLayout.setText(elapsedTimeFont, text);
-                    elapsedTimeFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 2, (viewport.getCamera().viewportHeight + glyphLayout.height) - 120);
+                    elapsedTimeFont.draw(batch, glyphLayout, (viewport.getCamera().viewportWidth - glyphLayout.width) / 2, (viewport.getCamera().viewportHeight + glyphLayout.height) - 100);
                     break;
             }
-
         }
+
 
         public void setViewport(ExtendViewport viewport) {
             this.viewport = viewport;
         }
-
     }
 
     public class ResourcesFilePath {

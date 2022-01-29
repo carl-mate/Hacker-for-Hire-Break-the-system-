@@ -1,5 +1,7 @@
 package com.mygdx.game;
 
+import static util.Constants.UI_BUTTON_CENTER;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
@@ -14,9 +16,6 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import util.Assets;
 import util.Constants;
 import util.Util;
-
-import static util.Constants.UI_BUTTON_CENTER;
-import static util.Constants.UI_BUTTON_HEIGHT;
 
 public class MenuScreen extends InputAdapter implements Screen{
     private static final String TAG = MenuScreen.class.getName();
@@ -61,29 +60,29 @@ public class MenuScreen extends InputAdapter implements Screen{
         Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.mainMenuBG, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2), Constants.BG_CENTER);
 
         //playButton attributes
-        Vector2 playButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2.7f);
+        Vector2 playButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 3f);
         Rectangle playButtonBoundingBox = new Rectangle(playButtonCenter.x - Constants.UI_BUTTON_WIDTH / 2, playButtonCenter.y - Constants.UI_BUTTON_HEIGHT / 2, Constants.UI_BUTTON_WIDTH, Constants.UI_BUTTON_HEIGHT);
 
         //optionsButton attributes
-        Vector2 optionsButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 4);
+        Vector2 optionsButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 4.5f);
         Rectangle optionsButtonBoundingBox = new Rectangle(optionsButtonCenter.x - Constants.UI_BUTTON_WIDTH / 2, optionsButtonCenter.y - Constants.UI_BUTTON_HEIGHT / 2, Constants.UI_BUTTON_WIDTH, Constants.UI_BUTTON_HEIGHT);
 
         //helpButton attributes
-        Vector2 helpButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 7.5f);
+        Vector2 helpButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 8.5f);
         Rectangle helpButtonBoundingBox = new Rectangle(helpButtonCenter.x - Constants.UI_BUTTON_WIDTH / 2, helpButtonCenter.y - Constants.UI_BUTTON_HEIGHT / 2, Constants.UI_BUTTON_WIDTH, Constants.UI_BUTTON_HEIGHT);
 
         Vector2 mousePosition = viewport.unproject(new Vector2(Gdx.input.getX(), Gdx.input.getY()));
 
         //hovered - playButton
         if(playButtonBoundingBox.contains(mousePosition)){
-            Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.playButtonActive, new Vector2(viewport.getCamera().viewportWidth / 2, (viewport.getCamera().viewportHeight - UI_BUTTON_HEIGHT) / 2.7f), UI_BUTTON_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.playButtonActive, new Vector2(viewport.getCamera().viewportWidth / 2, (viewport.getCamera().viewportHeight) / 3f), UI_BUTTON_CENTER);
             if(playButtonMouseHoverStartTime == 0){
                 playButtonMouseHoverStartTime = TimeUtils.nanoTime();
                 Assets.instance.soundClass.mouseHoverSound.play();
             }
         } else{
             //not hovered - playButton
-            Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.playButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, (viewport.getCamera().viewportHeight - UI_BUTTON_HEIGHT) / 2.7f), UI_BUTTON_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.playButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, (viewport.getCamera().viewportHeight) / 3f), UI_BUTTON_CENTER);
             if(playButtonMouseHoverStartTime > 0){
                 playButtonMouseHoverStartTime = 0;
             }
@@ -91,14 +90,14 @@ public class MenuScreen extends InputAdapter implements Screen{
 
         //hovered - optionsButton
         if(optionsButtonBoundingBox.contains(mousePosition)){
-            Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.optionsButtonActive, new Vector2(viewport.getCamera().viewportWidth / 2, (viewport.getCamera().viewportHeight - UI_BUTTON_HEIGHT) / 4f), UI_BUTTON_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.optionsButtonActive, new Vector2(viewport.getCamera().viewportWidth / 2, (viewport.getCamera().viewportHeight) / 4.5f), UI_BUTTON_CENTER);
             if(optionsButtonMouseHoverStartTime == 0){
                 optionsButtonMouseHoverStartTime = TimeUtils.nanoTime();
                 Assets.instance.soundClass.mouseHoverSound.play();
             }
         } else{
             //not hovered - optionsButton
-            Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.optionsButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, (viewport.getCamera().viewportHeight - UI_BUTTON_HEIGHT) / 4f), UI_BUTTON_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.optionsButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, (viewport.getCamera().viewportHeight) / 4.5f), UI_BUTTON_CENTER);
             if(optionsButtonMouseHoverStartTime > 0){
                 optionsButtonMouseHoverStartTime = 0;
             }
@@ -106,14 +105,14 @@ public class MenuScreen extends InputAdapter implements Screen{
 
         //hovered - helpButton
         if(helpButtonBoundingBox.contains(mousePosition)){
-            Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.helpButtonActive, new Vector2(viewport.getCamera().viewportWidth / 2, (viewport.getCamera().viewportHeight - UI_BUTTON_HEIGHT) / 7.5f), UI_BUTTON_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.helpButtonActive, new Vector2(viewport.getCamera().viewportWidth / 2, (viewport.getCamera().viewportHeight) / 8.5f), UI_BUTTON_CENTER);
             if(helpButtonMouseHoverStartTime == 0){
                 helpButtonMouseHoverStartTime = TimeUtils.nanoTime();
                 Assets.instance.soundClass.mouseHoverSound.play();
             }
         } else{
             //not hovered - helpButton
-            Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.helpButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, (viewport.getCamera().viewportHeight - UI_BUTTON_HEIGHT) / 7.5f), UI_BUTTON_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.helpButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, (viewport.getCamera().viewportHeight) / 8.5f), UI_BUTTON_CENTER);
             if(helpButtonMouseHoverStartTime > 0){
                 helpButtonMouseHoverStartTime = 0;
             }
@@ -154,15 +153,15 @@ public class MenuScreen extends InputAdapter implements Screen{
         Vector2 worldTouch = viewport.unproject(new Vector2(screenX, screenY));
 
         //playButton attributes
-        Vector2 playButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 4 + 40);
+        Vector2 playButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 3f);
         Rectangle playButtonBoundingBox = new Rectangle(playButtonCenter.x - Constants.UI_BUTTON_WIDTH / 2, playButtonCenter.y - Constants.UI_BUTTON_HEIGHT / 2, Constants.UI_BUTTON_WIDTH, Constants.UI_BUTTON_HEIGHT);
 
         //optionsButton attributes
-        Vector2 optionsButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 4);
+        Vector2 optionsButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 4.5f);
         Rectangle optionsButtonBoundingBox = new Rectangle(optionsButtonCenter.x - Constants.UI_BUTTON_WIDTH / 2, optionsButtonCenter.y - Constants.UI_BUTTON_HEIGHT / 2, Constants.UI_BUTTON_WIDTH, Constants.UI_BUTTON_HEIGHT);
 
         //helpButton attributes
-        Vector2 helpButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 7.5f);
+        Vector2 helpButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 8.5f);
         Rectangle helpButtonBoundingBox = new Rectangle(helpButtonCenter.x - Constants.UI_BUTTON_WIDTH / 2, helpButtonCenter.y - Constants.UI_BUTTON_HEIGHT / 2, Constants.UI_BUTTON_WIDTH, Constants.UI_BUTTON_HEIGHT);
 
 

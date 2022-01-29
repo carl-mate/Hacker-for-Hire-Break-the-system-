@@ -9,7 +9,7 @@ public class Constants {
     public static final Color BACKGROUND_COLOR = Color.SKY;
 
 
-    public static final float WORLD_SIZE = 886f;
+    public static final float WORLD_SIZE = 664f;
 
     public static final String TEXTURE_ATLAS = "images/hacker.pack.atlas";
 
@@ -35,10 +35,10 @@ public class Constants {
     public static final String ACTIONS_2 = "actions-2";
     public static final String ACTIONS_3 = "actions-3";
     public static final String BINARY_BACKGROUND = "binary-background";
-    public static final Vector2 UI_BUTTON_CENTER = new Vector2(125, 50);
-    public static final Vector2 BG_CENTER = new Vector2(886 / 2, 886 / 2);
-    public static final float UI_BUTTON_WIDTH = 250;
-    public static final float UI_BUTTON_HEIGHT = 100;
+    public static final Vector2 UI_BUTTON_CENTER = new Vector2(94, 38);
+    public static final Vector2 BG_CENTER = new Vector2(664 / 2, 664 / 2);
+    public static final float UI_BUTTON_WIDTH = 180;
+    public static final float UI_BUTTON_HEIGHT = 60;
 
     //Difficulty Screen Assets
     public static final String EASY = "easy";
@@ -50,9 +50,9 @@ public class Constants {
     public static final String MEDIUMBUTTON_INACTIVE = "medium-inactive";
     public static final String HARDBUTTON_ACTIVE = "hard-active";
     public static final String HARDBUTTON_INACTIVE = "hard-inactive";
-    public static final Vector2 DIFFICULTY_BUTTON_CENTER = new Vector2(258, 99);
-    public static final float DIFFICULTY_BUTTON_WIDTH = 481;
-    public static final float DIFFICULTY_BUTTON_HEIGHT = 150;
+    public static final Vector2 DIFFICULTY_BUTTON_CENTER = new Vector2(194, 75);
+    public static final float DIFFICULTY_BUTTON_WIDTH = 360;
+    public static final float DIFFICULTY_BUTTON_HEIGHT = 113;
 
     //Play Screen Assets
     public static final int CHANCES = 5;
@@ -93,16 +93,19 @@ public class Constants {
     public static final float PLAY_SCREEN_BUTTON_WIDTH = 298;
     public static final float PLAY_SCREEN_BUTTON_HEIGHT = 97;
 
+    public static final float QUESTION_BOX_WIDTH = 465;
+    public static final float QUESTION_BOX_HEIGHT = 188;
+
     public static final String MUSIC_ON = "music-on";
     public static final String MUSIC_OFF = "music-off";
     public static final String ON_OFF = "on-off";
-    public static final Vector2 MUSIC_BUTTON_CENTER = new Vector2(65, 65);
-    public static final float MUSIC_BUTTON_WIDTH = 110;
-    public static final float MUSIC_BUTTON_HEIGHT = 93;
+    public static final Vector2 MUSIC_BUTTON_CENTER = new Vector2(49, 49);
+    public static final float MUSIC_BUTTON_WIDTH = 83;
+    public static final float MUSIC_BUTTON_HEIGHT = 70;
 
-    public static final Vector2 PLAY_SCREEN_MENU_BUTTON_CENTER = new Vector2(58, 58);
-    public static final float PLAY_SCREEN_MENU_BUTTON_WIDTH = 58;
-    public static final float PLAY_SCREEN_MENU_BUTTON_HEIGHT = 23;
+    public static final Vector2 PLAY_SCREEN_MENU_BUTTON_CENTER = new Vector2(43, 43);
+    public static final float PLAY_SCREEN_MENU_BUTTON_WIDTH = 44;
+    public static final float PLAY_SCREEN_MENU_BUTTON_HEIGHT = 17;
 
     public static final String PROGRESS_BAR_1  = "progress-bar-1";
     public static final String PROGRESS_BAR_2  = "progress-bar-2";
@@ -145,9 +148,9 @@ public class Constants {
     public static final String LIFE_ANIMATION_5 = "life-animation-5";
     public static final String LIFE_ANIMATION_6 = "life-animation-6";
     public static final String LIFE_ANIMATION_7 = "life-animation-7";
-    public static final Vector2 LIFE_ANIMATION_CENTER = new Vector2(333, 97);
-    public static final float LIFE_ANIMATION_WIDTH = 665;
-    public static final float LIFE_ANIMATION_HEIGHT = 193;
+    public static final Vector2 LIFE_ANIMATION_CENTER = new Vector2(250, 73);
+    public static final float LIFE_ANIMATION_WIDTH = 499;
+    public static final float LIFE_ANIMATION_HEIGHT = 145;
 
     public static final String CORRECT_INDICATOR_1 = "correct-indicator-1";
     public static final String CORRECT_INDICATOR_2 = "correct-indicator-2";
@@ -169,15 +172,15 @@ public class Constants {
     public static final String WRONG_INDICATOR_8 = "wrong-indicator-8";
     public static final String WRONG_INDICATOR_9 = "wrong-indicator-9";
 
-    public static final Vector2 INDICATOR_CENTER = new Vector2(443, 66);
-    public static final float INDICATOR_WIDTH = 885;
-    public static final float INDICATOR_HEIGHT = 131;
+    public static final Vector2 INDICATOR_CENTER = new Vector2(332, 49);
+    public static final float INDICATOR_WIDTH = 664;
+    public static final float INDICATOR_HEIGHT = 98;
     public static final float ANIMATION_DURATION = 0.1f;
 
     public static final String BITCOIN_LOGO = "bitcoin-logo";
-    public static final Vector2 BITCOIN_LOGO_CENTER = new Vector2(58, 58);
-    public static final float BITCOIN_LOGO_WIDTH = 38;
-    public static final float BITCOIN_LOGO_HEIGHT = 38;
+    public static final Vector2 BITCOIN_LOGO_CENTER = new Vector2(43, 43);
+    public static final float BITCOIN_LOGO_WIDTH = 29;
+    public static final float BITCOIN_LOGO_HEIGHT = 29;
 
     public static final String CALL_ANOTHER_HACKER = "call-another-hacker";
     public static final String SSH_INTO_A_SUPERCOMPUTER = "ssh-into-a-supercomputer";
@@ -187,17 +190,17 @@ public class Constants {
     public static final String SSH_INTO_A_SUPERCOMPUTER_DISABLED = "ssh-into-a-supercomputer-disabled";
     public static final String DDEM_PROBABILITY_ALGORITHM_DISABLED = "ddem-probability-algorithm-disabled";
 
-    public static final Vector2 CALL_ANOTHER_HACKER_CENTER = new Vector2(15, 20);
-    public static final float CALL_ANOTHER_HACKER_WIDTH = 30;
-    public static final float CALL_ANOTHER_HACKER_HEIGHT = 40;
+    public static final Vector2 CALL_ANOTHER_HACKER_CENTER = new Vector2(12, 15);
+    public static final float CALL_ANOTHER_HACKER_WIDTH = 23;
+    public static final float CALL_ANOTHER_HACKER_HEIGHT = 30;
 
-    public static final Vector2 SSH_INTO_A_SUPERCOMPUTER_CENTER = new Vector2(30, 20);
-    public static final float SSH_INTO_A_SUPERCOMPUTER_WIDTH = 60;
-    public static final float SSH_INTO_A_SUPERCOMPUTER_HEIGHT = 40;
+    public static final Vector2 SSH_INTO_A_SUPERCOMPUTER_CENTER = new Vector2(23, 15);
+    public static final float SSH_INTO_A_SUPERCOMPUTER_WIDTH = 45;
+    public static final float SSH_INTO_A_SUPERCOMPUTER_HEIGHT = 30;
 
-    public static final Vector2 DDEM_PROBABILITY_ALGORITHM_CENTER = new Vector2(20, 20);
-    public static final float DDEM_PROBABILITY_ALGORITHM_WIDTH = 40;
-    public static final float DDEM_PROBABILITY_ALGORITHM_HEIGHT = 40;
+    public static final Vector2 DDEM_PROBABILITY_ALGORITHM_CENTER = new Vector2(15, 15);
+    public static final float DDEM_PROBABILITY_ALGORITHM_WIDTH = 30;
+    public static final float DDEM_PROBABILITY_ALGORITHM_HEIGHT = 30;
 
 
 

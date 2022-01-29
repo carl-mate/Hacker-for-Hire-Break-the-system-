@@ -91,20 +91,9 @@ public class QuestionsManager {
         itemArrayList = ExcelFileToArrayList.convert();
     }
 
-    private static String checkQuestionFormat(String question){
-    StringAlignUtils util = new StringAlignUtils(52, StringAlignUtils.Alignment.CENTER);
-        return util.format(question);
-    }
-
-    private static String checkChoiceFormat(String choice){
-        StringAlignUtils util = new StringAlignUtils(30, StringAlignUtils.Alignment.CENTER);
-        return util.format(choice);
-    }
-
     public static class ExcelFileToArrayList {
         public static ArrayList<Item> convert() throws IOException {
             ArrayList<Item> temp = new ArrayList<>();
-
 
             XSSFWorkbook workbook = new XSSFWorkbook(Assets.instance.resourcesFilePath.inputStream);
             XSSFSheet sheet = workbook.getSheetAt(0);
@@ -184,11 +173,11 @@ public class QuestionsManager {
         public Item(String topic, String question, String choiceOne, String choiceTwo, String choiceThree,
                     String choiceFour, String correctChoice, String imageFilename, String difficulty) {
             this.topic = topic;
-            this.question = checkQuestionFormat(question);
-            this.choiceOne = checkChoiceFormat(choiceOne);
-            this.choiceTwo = checkChoiceFormat(choiceTwo);
-            this.choiceThree = checkChoiceFormat(choiceThree);
-            this.choiceFour = checkChoiceFormat(choiceFour);
+            this.question = question;
+            this.choiceOne = choiceOne;
+            this.choiceTwo = choiceTwo;
+            this.choiceThree = choiceThree;
+            this.choiceFour = choiceFour;
             this.correctChoice = correctChoice;
             this.imageFilename = imageFilename;
             this.difficulty = difficulty;

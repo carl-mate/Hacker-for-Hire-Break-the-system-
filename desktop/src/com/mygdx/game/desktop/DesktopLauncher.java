@@ -11,8 +11,8 @@ public class DesktopLauncher {
 		HackerGame hackerGame = new HackerGame();
 		hackerGame.setSplashWorker(new DesktopSplashWorker());
 		config.title = "Hacker-for-Hire: Break the System!";
-		config.width = 665;
-		config.height = 665;
+		config.width = 664;
+		config.height = 664;
 		config.resizable = false;
 		config.addIcon("icon-128.png", Files.FileType.Internal);
 		config.addIcon("icon-32.png", Files.FileType.Internal);

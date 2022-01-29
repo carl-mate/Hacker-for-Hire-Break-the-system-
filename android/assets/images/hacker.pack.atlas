@@ -6,107 +6,338 @@ filter: Nearest,Nearest
 repeat: none
 binary-background
   rotate: false
-  xy: 2, 135
-  size: 886, 886
-  orig: 886, 886
-  offset: 0, 0
-  index: -1
-bitcoin-logo
-  rotate: false
-  xy: 890, 642
-  size: 115, 115
-  orig: 115, 115
+  xy: 2, 357
+  size: 665, 665
+  orig: 665, 665
   offset: 0, 0
   index: -1
 call-another-hacker
   rotate: false
-  xy: 952, 441
-  size: 30, 40
-  orig: 30, 40
+  xy: 969, 864
+  size: 23, 30
+  orig: 23, 30
   offset: 0, 0
   index: -1
 call-another-hacker-disabled
   rotate: false
-  xy: 890, 357
-  size: 30, 40
-  orig: 30, 40
+  xy: 994, 864
+  size: 23, 30
+  orig: 23, 30
   offset: 0, 0
   index: -1
 correct-indicator-1
   rotate: false
-  xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  xy: 2, 257
+  size: 664, 98
+  orig: 664, 98
   offset: 0, 0
   index: -1
 correct-indicator-9
   rotate: false
-  xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  xy: 2, 257
+  size: 664, 98
+  orig: 664, 98
   offset: 0, 0
   index: -1
 wrong-indicator-1
   rotate: false
-  xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  xy: 2, 257
+  size: 664, 98
+  orig: 664, 98
   offset: 0, 0
   index: -1
 wrong-indicator-9
   rotate: false
-  xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  xy: 2, 257
+  size: 664, 98
+  orig: 664, 98
+  offset: 0, 0
+  index: -1
+correct-indicator-2
+  rotate: false
+  xy: 2, 157
+  size: 664, 98
+  orig: 664, 98
   offset: 0, 0
   index: -1
 ddem-probability-algorithm
   rotate: false
-  xy: 952, 483
-  size: 40, 40
-  orig: 40, 40
+  xy: 969, 928
+  size: 30, 30
+  orig: 30, 30
   offset: 0, 0
   index: -1
 ddem-probability-algorithm-disabled
   rotate: false
-  xy: 890, 399
-  size: 40, 40
-  orig: 40, 40
+  xy: 969, 896
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+easy-active
+  rotate: false
+  xy: 2, 6
+  size: 387, 149
+  orig: 387, 149
+  offset: 0, 0
+  index: -1
+easy-inactive
+  rotate: false
+  xy: 391, 6
+  size: 387, 149
+  orig: 387, 149
+  offset: 0, 0
+  index: -1
+helpButton-active
+  rotate: false
+  xy: 669, 749
+  size: 188, 75
+  orig: 188, 75
+  offset: 0, 0
+  index: -1
+helpButton-inactive
+  rotate: false
+  xy: 669, 672
+  size: 188, 75
+  orig: 188, 75
+  offset: 0, 0
+  index: -1
+highScores-active
+  rotate: false
+  xy: 669, 595
+  size: 188, 75
+  orig: 188, 75
+  offset: 0, 0
+  index: -1
+highScores-inactive
+  rotate: false
+  xy: 669, 518
+  size: 188, 75
+  orig: 188, 75
   offset: 0, 0
   index: -1
 music-off
   rotate: false
-  xy: 890, 891
-  size: 130, 130
-  orig: 130, 130
+  xy: 780, 33
+  size: 98, 98
+  orig: 98, 98
   offset: 0, 0
   index: -1
 music-on
   rotate: false
-  xy: 890, 759
-  size: 130, 130
-  orig: 130, 130
+  xy: 880, 33
+  size: 98, 98
+  orig: 98, 98
   offset: 0, 0
   index: -1
-playMenuButton
+optionsButton-active
   rotate: false
-  xy: 890, 525
-  size: 115, 115
-  orig: 115, 115
+  xy: 669, 441
+  size: 188, 75
+  orig: 188, 75
+  offset: 0, 0
+  index: -1
+optionsButton-inactive
+  rotate: false
+  xy: 669, 364
+  size: 188, 75
+  orig: 188, 75
+  offset: 0, 0
+  index: -1
+playButton-active
+  rotate: false
+  xy: 669, 287
+  size: 188, 75
+  orig: 188, 75
+  offset: 0, 0
+  index: -1
+playButton-inactive
+  rotate: false
+  xy: 668, 210
+  size: 188, 75
+  orig: 188, 75
+  offset: 0, 0
+  index: -1
+playScreenButton
+  rotate: false
+  xy: 669, 925
+  size: 298, 97
+  orig: 298, 97
+  offset: 0, 0
+  index: -1
+playScreenButton-correct
+  rotate: false
+  xy: 669, 826
+  size: 298, 97
+  orig: 298, 97
+  offset: 0, 0
+  index: -1
+progress-bar-1
+  rotate: false
+  xy: 859, 795
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-10
+  rotate: false
+  xy: 859, 516
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-11
+  rotate: false
+  xy: 859, 485
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-12
+  rotate: false
+  xy: 859, 454
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-13
+  rotate: false
+  xy: 859, 423
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-14
+  rotate: false
+  xy: 859, 392
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-15
+  rotate: false
+  xy: 859, 361
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-16
+  rotate: false
+  xy: 859, 330
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-17
+  rotate: false
+  xy: 859, 299
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-18
+  rotate: false
+  xy: 859, 268
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-19
+  rotate: false
+  xy: 668, 179
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-2
+  rotate: false
+  xy: 859, 764
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-20
+  rotate: false
+  xy: 858, 237
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-21
+  rotate: false
+  xy: 780, 2
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-3
+  rotate: false
+  xy: 859, 733
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-4
+  rotate: false
+  xy: 859, 702
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-5
+  rotate: false
+  xy: 859, 671
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-6
+  rotate: false
+  xy: 859, 640
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-7
+  rotate: false
+  xy: 859, 609
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-8
+  rotate: false
+  xy: 859, 578
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+progress-bar-9
+  rotate: false
+  xy: 859, 547
+  size: 126, 29
+  orig: 126, 29
+  offset: 0, 0
+  index: -1
+returnToMenu-active
+  rotate: false
+  xy: 796, 133
+  size: 188, 75
+  orig: 188, 75
   offset: 0, 0
   index: -1
 ssh-into-a-supercomputer
   rotate: false
-  xy: 890, 483
-  size: 60, 40
-  orig: 60, 40
+  xy: 969, 992
+  size: 45, 30
+  orig: 45, 30
   offset: 0, 0
   index: -1
 ssh-into-a-supercomputer-disabled
   rotate: false
-  xy: 890, 441
-  size: 60, 40
-  orig: 60, 40
+  xy: 969, 960
+  size: 45, 30
+  orig: 45, 30
   offset: 0, 0
   index: -1
 
@@ -115,340 +346,137 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-correct-indicator-2
+bitcoin-logo
   rotate: false
-  xy: 2, 268
-  size: 885, 131
-  orig: 885, 131
+  xy: 859, 906
+  size: 86, 86
+  orig: 86, 86
   offset: 0, 0
   index: -1
-correct-indicator-3
+enterCodename
   rotate: false
-  xy: 2, 135
-  size: 885, 131
-  orig: 885, 131
+  xy: 2, 327
+  size: 665, 665
+  orig: 665, 665
   offset: 0, 0
   index: -1
-correct-indicator-7
+life-animation-1
   rotate: false
-  xy: 2, 135
-  size: 885, 131
-  orig: 885, 131
+  xy: 2, 180
+  size: 499, 145
+  orig: 499, 145
   offset: 0, 0
   index: -1
-correct-indicator-4
+life-animation-2
   rotate: false
-  xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  xy: 503, 180
+  size: 499, 145
+  orig: 499, 145
   offset: 0, 0
   index: -1
-helpButton-active
+life-animation-3
   rotate: false
-  xy: 602, 707
-  size: 250, 100
-  orig: 250, 100
+  xy: 2, 33
+  size: 499, 145
+  orig: 499, 145
   offset: 0, 0
   index: -1
-helpButton-inactive
+life-animation-4
   rotate: false
-  xy: 2, 608
-  size: 250, 100
-  orig: 250, 100
+  xy: 503, 33
+  size: 499, 145
+  orig: 499, 145
   offset: 0, 0
   index: -1
-highScores-active
+playMenuButton
   rotate: false
-  xy: 254, 608
-  size: 250, 100
-  orig: 250, 100
-  offset: 0, 0
-  index: -1
-highScores-inactive
-  rotate: false
-  xy: 506, 605
-  size: 250, 100
-  orig: 250, 100
-  offset: 0, 0
-  index: -1
-optionsButton-active
-  rotate: false
-  xy: 758, 605
-  size: 250, 100
-  orig: 250, 100
-  offset: 0, 0
-  index: -1
-optionsButton-inactive
-  rotate: false
-  xy: 2, 506
-  size: 250, 100
-  orig: 250, 100
-  offset: 0, 0
-  index: -1
-playButton-active
-  rotate: false
-  xy: 254, 506
-  size: 250, 100
-  orig: 250, 100
-  offset: 0, 0
-  index: -1
-playButton-inactive
-  rotate: false
-  xy: 506, 503
-  size: 250, 100
-  orig: 250, 100
-  offset: 0, 0
-  index: -1
-playScreenButton
-  rotate: false
-  xy: 2, 710
-  size: 298, 97
-  orig: 298, 97
-  offset: 0, 0
-  index: -1
-playScreenButton-correct
-  rotate: false
-  xy: 302, 710
-  size: 298, 97
-  orig: 298, 97
-  offset: 0, 0
-  index: -1
-progress-bar-1
-  rotate: false
-  xy: 2, 973
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-10
-  rotate: false
-  xy: 512, 932
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-11
-  rotate: false
-  xy: 682, 932
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-12
-  rotate: false
-  xy: 852, 932
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-13
-  rotate: false
-  xy: 2, 891
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-14
-  rotate: false
-  xy: 172, 891
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-15
-  rotate: false
-  xy: 342, 891
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-16
-  rotate: false
-  xy: 512, 891
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-17
-  rotate: false
-  xy: 682, 891
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-18
-  rotate: false
-  xy: 852, 891
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-19
-  rotate: false
-  xy: 2, 850
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-2
-  rotate: false
-  xy: 172, 973
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-20
-  rotate: false
-  xy: 172, 850
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-21
-  rotate: false
-  xy: 342, 850
-  size: 168, 39
-  orig: 168, 39
+  xy: 859, 818
+  size: 86, 86
+  orig: 86, 86
   offset: 0, 0
   index: -1
 progress-bar-22
   rotate: false
-  xy: 512, 850
-  size: 168, 39
-  orig: 168, 39
+  xy: 2, 2
+  size: 126, 29
+  orig: 126, 29
   offset: 0, 0
   index: -1
 progress-bar-23
   rotate: false
-  xy: 682, 850
-  size: 168, 39
-  orig: 168, 39
+  xy: 130, 2
+  size: 126, 29
+  orig: 126, 29
   offset: 0, 0
   index: -1
 progress-bar-24
   rotate: false
-  xy: 852, 850
-  size: 168, 39
-  orig: 168, 39
+  xy: 258, 2
+  size: 126, 29
+  orig: 126, 29
   offset: 0, 0
   index: -1
 progress-bar-25
   rotate: false
-  xy: 2, 809
-  size: 168, 39
-  orig: 168, 39
+  xy: 386, 2
+  size: 126, 29
+  orig: 126, 29
   offset: 0, 0
   index: -1
 progress-bar-26
   rotate: false
-  xy: 172, 809
-  size: 168, 39
-  orig: 168, 39
+  xy: 514, 2
+  size: 126, 29
+  orig: 126, 29
   offset: 0, 0
   index: -1
 progress-bar-27
   rotate: false
-  xy: 342, 809
-  size: 168, 39
-  orig: 168, 39
+  xy: 642, 2
+  size: 126, 29
+  orig: 126, 29
   offset: 0, 0
   index: -1
 progress-bar-28
   rotate: false
-  xy: 512, 809
-  size: 168, 39
-  orig: 168, 39
+  xy: 770, 2
+  size: 126, 29
+  orig: 126, 29
   offset: 0, 0
   index: -1
 progress-bar-29
   rotate: false
-  xy: 682, 809
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-3
-  rotate: false
-  xy: 342, 973
-  size: 168, 39
-  orig: 168, 39
+  xy: 859, 787
+  size: 126, 29
+  orig: 126, 29
   offset: 0, 0
   index: -1
 progress-bar-30
   rotate: false
-  xy: 852, 809
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-4
-  rotate: false
-  xy: 512, 973
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-5
-  rotate: false
-  xy: 682, 973
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-6
-  rotate: false
-  xy: 852, 973
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-7
-  rotate: false
-  xy: 2, 932
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-8
-  rotate: false
-  xy: 172, 932
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-progress-bar-9
-  rotate: false
-  xy: 342, 932
-  size: 168, 39
-  orig: 168, 39
-  offset: 0, 0
-  index: -1
-returnToMenu-active
-  rotate: false
-  xy: 758, 503
-  size: 250, 100
-  orig: 250, 100
+  xy: 859, 756
+  size: 126, 29
+  orig: 126, 29
   offset: 0, 0
   index: -1
 returnToMenu-inactive
   rotate: false
-  xy: 2, 404
-  size: 250, 100
-  orig: 250, 100
+  xy: 669, 917
+  size: 188, 75
+  orig: 188, 75
   offset: 0, 0
   index: -1
 tryAgain-active
   rotate: false
-  xy: 254, 404
-  size: 250, 100
-  orig: 250, 100
+  xy: 669, 840
+  size: 188, 75
+  orig: 188, 75
   offset: 0, 0
   index: -1
 tryAgain-inactive
   rotate: false
-  xy: 506, 401
-  size: 250, 100
-  orig: 250, 100
+  xy: 669, 763
+  size: 188, 75
+  orig: 188, 75
   offset: 0, 0
   index: -1
 
@@ -457,18 +485,39 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-correct-indicator-5
+hard-active
   rotate: false
-  xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  xy: 503, 2
+  size: 387, 149
+  orig: 387, 149
   offset: 0, 0
   index: -1
-enterCodename
+highScores-bg
   rotate: false
-  xy: 2, 135
-  size: 886, 886
-  orig: 886, 886
+  xy: 2, 300
+  size: 665, 665
+  orig: 665, 665
+  offset: 0, 0
+  index: -1
+life-animation-5
+  rotate: false
+  xy: 2, 153
+  size: 499, 145
+  orig: 499, 145
+  offset: 0, 0
+  index: -1
+life-animation-6
+  rotate: false
+  xy: 503, 153
+  size: 499, 145
+  orig: 499, 145
+  offset: 0, 0
+  index: -1
+life-animation-7
+  rotate: false
+  xy: 2, 6
+  size: 499, 145
+  orig: 499, 145
   offset: 0, 0
   index: -1
 
@@ -477,18 +526,46 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-correct-indicator-6
+correct-indicator-3
   rotate: false
-  xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  xy: 2, 102
+  size: 664, 98
+  orig: 664, 98
   offset: 0, 0
   index: -1
-highScores-bg
+correct-indicator-7
   rotate: false
-  xy: 2, 135
-  size: 886, 886
-  orig: 886, 886
+  xy: 2, 102
+  size: 664, 98
+  orig: 664, 98
+  offset: 0, 0
+  index: -1
+correct-indicator-4
+  rotate: false
+  xy: 2, 2
+  size: 664, 98
+  orig: 664, 98
+  offset: 0, 0
+  index: -1
+hard-inactive
+  rotate: false
+  xy: 2, 202
+  size: 387, 149
+  orig: 387, 149
+  offset: 0, 0
+  index: -1
+loading-screen
+  rotate: false
+  xy: 2, 353
+  size: 665, 665
+  orig: 665, 665
+  offset: 0, 0
+  index: -1
+medium-active
+  rotate: false
+  xy: 391, 202
+  size: 387, 149
+  orig: 387, 149
   offset: 0, 0
   index: -1
 
@@ -497,18 +574,32 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+correct-indicator-5
+  rotate: false
+  xy: 2, 202
+  size: 664, 98
+  orig: 664, 98
+  offset: 0, 0
+  index: -1
+correct-indicator-6
+  rotate: false
+  xy: 2, 102
+  size: 664, 98
+  orig: 664, 98
+  offset: 0, 0
+  index: -1
 correct-indicator-8
   rotate: false
   xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  size: 664, 98
+  orig: 664, 98
   offset: 0, 0
   index: -1
-loading-screen
+mainMenu-bg
   rotate: false
-  xy: 2, 135
-  size: 886, 886
-  orig: 886, 886
+  xy: 2, 302
+  size: 665, 665
+  orig: 665, 665
   offset: 0, 0
   index: -1
 
@@ -517,18 +608,39 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-mainMenu-bg
+on-off
   rotate: false
-  xy: 2, 135
-  size: 886, 886
-  orig: 886, 886
+  xy: 2, 302
+  size: 665, 665
+  orig: 665, 665
   offset: 0, 0
   index: -1
 wrong-indicator-2
   rotate: false
+  xy: 2, 202
+  size: 664, 98
+  orig: 664, 98
+  offset: 0, 0
+  index: -1
+wrong-indicator-3
+  rotate: false
+  xy: 2, 102
+  size: 664, 98
+  orig: 664, 98
+  offset: 0, 0
+  index: -1
+wrong-indicator-7
+  rotate: false
+  xy: 2, 102
+  size: 664, 98
+  orig: 664, 98
+  offset: 0, 0
+  index: -1
+wrong-indicator-4
+  rotate: false
   xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  size: 664, 98
+  orig: 664, 98
   offset: 0, 0
   index: -1
 
@@ -537,25 +649,32 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-on-off
+splashScreen
   rotate: false
-  xy: 2, 135
-  size: 886, 886
-  orig: 886, 886
+  xy: 2, 302
+  size: 665, 665
+  orig: 665, 665
   offset: 0, 0
   index: -1
-wrong-indicator-3
+wrong-indicator-5
   rotate: false
-  xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  xy: 2, 202
+  size: 664, 98
+  orig: 664, 98
   offset: 0, 0
   index: -1
-wrong-indicator-7
+wrong-indicator-6
+  rotate: false
+  xy: 2, 102
+  size: 664, 98
+  orig: 664, 98
+  offset: 0, 0
+  index: -1
+wrong-indicator-8
   rotate: false
   xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  size: 664, 98
+  orig: 664, 98
   offset: 0, 0
   index: -1
 
@@ -564,18 +683,18 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-splashScreen
+actions-1
   rotate: false
-  xy: 2, 135
-  size: 886, 886
-  orig: 886, 886
+  xy: 2, 153
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1
-wrong-indicator-4
+medium-inactive
   rotate: false
   xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  size: 387, 149
+  orig: 387, 149
   offset: 0, 0
   index: -1
 
@@ -584,18 +703,11 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-actions-1
-  rotate: false
-  xy: 2, 135
-  size: 885, 885
-  orig: 885, 885
-  offset: 0, 0
-  index: -1
-wrong-indicator-5
+actions-2
   rotate: false
   xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1
 
@@ -604,18 +716,11 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-actions-2
-  rotate: false
-  xy: 2, 135
-  size: 885, 885
-  orig: 885, 885
-  offset: 0, 0
-  index: -1
-wrong-indicator-6
+actions-3
   rotate: false
   xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1
 
@@ -624,18 +729,11 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-actions-3
-  rotate: false
-  xy: 2, 135
-  size: 885, 885
-  orig: 885, 885
-  offset: 0, 0
-  index: -1
-wrong-indicator-8
+easy
   rotate: false
   xy: 2, 2
-  size: 885, 131
-  orig: 885, 131
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1
 
@@ -644,11 +742,11 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-easy
+gameOver
   rotate: false
   xy: 2, 2
-  size: 885, 885
-  orig: 885, 885
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1
 
@@ -657,11 +755,11 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-gameOver
+hard
   rotate: false
   xy: 2, 2
-  size: 885, 885
-  orig: 885, 885
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1
 
@@ -670,11 +768,11 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-hard
+instructions-1
   rotate: false
   xy: 2, 2
-  size: 885, 885
-  orig: 885, 885
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1
 
@@ -683,11 +781,11 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-instructions-1
+instructions-2
   rotate: false
   xy: 2, 2
-  size: 885, 885
-  orig: 885, 885
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1
 
@@ -696,11 +794,11 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-instructions-2
+instructions-3
   rotate: false
   xy: 2, 2
-  size: 885, 885
-  orig: 885, 885
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1
 
@@ -709,11 +807,11 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-instructions-3
+medium
   rotate: false
   xy: 2, 2
-  size: 885, 885
-  orig: 885, 885
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1
 
@@ -722,11 +820,11 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-medium
+playScreenBG
   rotate: false
   xy: 2, 2
-  size: 885, 885
-  orig: 885, 885
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1
 
@@ -735,11 +833,11 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-playScreenBG
+show-image
   rotate: false
   xy: 2, 2
-  size: 885, 885
-  orig: 885, 885
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1
 
@@ -748,132 +846,10 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-show-image
-  rotate: false
-  xy: 2, 2
-  size: 885, 885
-  orig: 885, 885
-  offset: 0, 0
-  index: -1
-
-hacker.pack21.png
-size: 1024,1024
-format: RGBA8888
-filter: Nearest,Nearest
-repeat: none
 youWin
   rotate: false
   xy: 2, 2
-  size: 885, 885
-  orig: 885, 885
-  offset: 0, 0
-  index: -1
-
-hacker.pack22.png
-size: 1024,1024
-format: RGBA8888
-filter: Nearest,Nearest
-repeat: none
-life-animation-1
-  rotate: false
-  xy: 2, 782
-  size: 665, 193
-  orig: 665, 193
-  offset: 0, 0
-  index: -1
-life-animation-2
-  rotate: false
-  xy: 2, 587
-  size: 665, 193
-  orig: 665, 193
-  offset: 0, 0
-  index: -1
-life-animation-3
-  rotate: false
-  xy: 2, 392
-  size: 665, 193
-  orig: 665, 193
-  offset: 0, 0
-  index: -1
-life-animation-4
-  rotate: false
-  xy: 2, 197
-  size: 665, 193
-  orig: 665, 193
-  offset: 0, 0
-  index: -1
-life-animation-5
-  rotate: false
-  xy: 2, 2
-  size: 665, 193
-  orig: 665, 193
-  offset: 0, 0
-  index: -1
-
-hacker.pack23.png
-size: 1024,1024
-format: RGBA8888
-filter: Nearest,Nearest
-repeat: none
-easy-active
-  rotate: false
-  xy: 2, 402
-  size: 516, 198
-  orig: 516, 198
-  offset: 0, 0
-  index: -1
-easy-inactive
-  rotate: false
-  xy: 2, 202
-  size: 516, 198
-  orig: 516, 198
-  offset: 0, 0
-  index: -1
-hard-active
-  rotate: false
-  xy: 2, 2
-  size: 516, 198
-  orig: 516, 198
-  offset: 0, 0
-  index: -1
-life-animation-6
-  rotate: false
-  xy: 2, 797
-  size: 665, 193
-  orig: 665, 193
-  offset: 0, 0
-  index: -1
-life-animation-7
-  rotate: false
-  xy: 2, 602
-  size: 665, 193
-  orig: 665, 193
-  offset: 0, 0
-  index: -1
-
-hacker.pack24.png
-size: 1024,1024
-format: RGBA8888
-filter: Nearest,Nearest
-repeat: none
-hard-inactive
-  rotate: false
-  xy: 2, 402
-  size: 516, 198
-  orig: 516, 198
-  offset: 0, 0
-  index: -1
-medium-active
-  rotate: false
-  xy: 2, 202
-  size: 516, 198
-  orig: 516, 198
-  offset: 0, 0
-  index: -1
-medium-inactive
-  rotate: false
-  xy: 2, 2
-  size: 516, 198
-  orig: 516, 198
+  size: 664, 664
+  orig: 664, 664
   offset: 0, 0
   index: -1

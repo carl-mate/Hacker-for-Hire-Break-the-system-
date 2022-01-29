@@ -49,20 +49,10 @@ public class HelpScreen extends InputAdapter implements Screen {
 
         batch.setProjectionMatrix(viewport.getCamera().combined);
 
+
+
         batch.begin();
         Util.drawTextureRegion(batch, Assets.instance.mainMenuAssets.binaryBackground, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2), Constants.BG_CENTER);
-
-        if(Gdx.input.isKeyJustPressed(Input.Keys.LEFT)){
-            if(pageCounter-1 >= 0){
-                pageCounter--;
-            }
-        }
-
-        if(Gdx.input.isKeyJustPressed(Input.Keys.RIGHT)){
-            if(pageCounter+1 < 6){
-                pageCounter++;
-            }
-        }
 
         if(pageCounter < 6){
             if(pageCounter == 0){
@@ -82,6 +72,18 @@ public class HelpScreen extends InputAdapter implements Screen {
 
         batch.end();
 
+
+        if(Gdx.input.isKeyJustPressed(Input.Keys.LEFT)){
+            if(pageCounter-1 >= 0){
+                pageCounter--;
+            }
+        }
+
+        if(Gdx.input.isKeyJustPressed(Input.Keys.RIGHT)){
+            if(pageCounter+1 < 6){
+                pageCounter++;
+            }
+        }
         if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)){
             hackerGame.showMenuScreen();
         }

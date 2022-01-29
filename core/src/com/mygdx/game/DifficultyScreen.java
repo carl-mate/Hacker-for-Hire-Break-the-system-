@@ -63,11 +63,11 @@ public class DifficultyScreen extends InputAdapter implements Screen {
         Rectangle easyButtonBoundingBox = new Rectangle(easyButtonCenter.x - Constants.DIFFICULTY_BUTTON_WIDTH / 2, easyButtonCenter.y - Constants.DIFFICULTY_BUTTON_HEIGHT / 2, Constants.DIFFICULTY_BUTTON_WIDTH, Constants.DIFFICULTY_BUTTON_HEIGHT);
 
         //mediumButton attributes
-        Vector2 mediumButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 240);
+        Vector2 mediumButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 180);
         Rectangle mediumButtonBoundingBox = new Rectangle(mediumButtonCenter.x - Constants.DIFFICULTY_BUTTON_WIDTH / 2, mediumButtonCenter.y - Constants.DIFFICULTY_BUTTON_HEIGHT / 2, Constants.DIFFICULTY_BUTTON_WIDTH, Constants.DIFFICULTY_BUTTON_HEIGHT);
 
         //hardButton attributes
-        Vector2 hardButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 440);
+        Vector2 hardButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 320);
         Rectangle hardButtonBoundingBox = new Rectangle(hardButtonCenter.x - Constants.DIFFICULTY_BUTTON_WIDTH / 2, hardButtonCenter.y - Constants.DIFFICULTY_BUTTON_HEIGHT / 2, Constants.DIFFICULTY_BUTTON_WIDTH, Constants.DIFFICULTY_BUTTON_HEIGHT);
 
         Vector2 mousePosition = viewport.unproject(new Vector2(Gdx.input.getX(), Gdx.input.getY()));
@@ -106,18 +106,18 @@ public class DifficultyScreen extends InputAdapter implements Screen {
         if(difficulty == Difficulty.EASY){
             Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.easyBG, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2), Constants.BG_CENTER);
             Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.easyButtonActive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 40), Constants.DIFFICULTY_BUTTON_CENTER);
-            Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.mediumButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 240), Constants.DIFFICULTY_BUTTON_CENTER);
-            Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.hardButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 440), Constants.DIFFICULTY_BUTTON_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.mediumButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 180), Constants.DIFFICULTY_BUTTON_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.hardButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 320), Constants.DIFFICULTY_BUTTON_CENTER);
         } else if(difficulty == Difficulty.MEDIUM){
             Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.mediumBG, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2), Constants.BG_CENTER);
             Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.easyButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 40), Constants.DIFFICULTY_BUTTON_CENTER);
-            Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.mediumButtonActive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 240), Constants.DIFFICULTY_BUTTON_CENTER);
-            Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.hardButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 440), Constants.DIFFICULTY_BUTTON_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.mediumButtonActive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 180), Constants.DIFFICULTY_BUTTON_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.hardButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 320), Constants.DIFFICULTY_BUTTON_CENTER);
         } else if(difficulty == Difficulty.HARD){
             Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.hardBG, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2), Constants.BG_CENTER);
             Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.easyButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 40), Constants.DIFFICULTY_BUTTON_CENTER);
-            Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.mediumButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 240), Constants.DIFFICULTY_BUTTON_CENTER);
-            Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.hardButtonActive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 440), Constants.DIFFICULTY_BUTTON_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.mediumButtonInactive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 180), Constants.DIFFICULTY_BUTTON_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.difficultyScreenAssets.hardButtonActive, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 320), Constants.DIFFICULTY_BUTTON_CENTER);
         }
 
 
@@ -160,11 +160,11 @@ public class DifficultyScreen extends InputAdapter implements Screen {
         Rectangle easyButtonBoundingBox = new Rectangle(easyButtonCenter.x - Constants.DIFFICULTY_BUTTON_WIDTH / 2, easyButtonCenter.y - Constants.DIFFICULTY_BUTTON_HEIGHT / 2, Constants.DIFFICULTY_BUTTON_WIDTH, Constants.DIFFICULTY_BUTTON_HEIGHT);
 
         //mediumButton attributes
-        Vector2 mediumButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 240);
+        Vector2 mediumButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 180);
         Rectangle mediumButtonBoundingBox = new Rectangle(mediumButtonCenter.x - Constants.DIFFICULTY_BUTTON_WIDTH / 2, mediumButtonCenter.y - Constants.DIFFICULTY_BUTTON_HEIGHT / 2, Constants.DIFFICULTY_BUTTON_WIDTH, Constants.DIFFICULTY_BUTTON_HEIGHT);
 
         //hardButton attributes
-        Vector2 hardButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 440);
+        Vector2 hardButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 + Constants.DIFFICULTY_BUTTON_HEIGHT - 320);
         Rectangle hardButtonBoundingBox = new Rectangle(hardButtonCenter.x - Constants.DIFFICULTY_BUTTON_WIDTH / 2, hardButtonCenter.y - Constants.DIFFICULTY_BUTTON_HEIGHT / 2, Constants.DIFFICULTY_BUTTON_WIDTH, Constants.DIFFICULTY_BUTTON_HEIGHT);
 
         if(easyButtonBoundingBox.contains(worldTouch) || mediumButtonBoundingBox.contains(worldTouch) || hardButtonBoundingBox.contains(worldTouch)){

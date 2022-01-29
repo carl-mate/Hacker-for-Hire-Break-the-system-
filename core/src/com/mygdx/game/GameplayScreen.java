@@ -1,5 +1,21 @@
 package com.mygdx.game;
 
+import static util.Constants.BITCOIN_LOGO_WIDTH;
+import static util.Constants.CALL_ANOTHER_HACKER_CENTER;
+import static util.Constants.CALL_ANOTHER_HACKER_HEIGHT;
+import static util.Constants.CALL_ANOTHER_HACKER_WIDTH;
+import static util.Constants.DDEM_PROBABILITY_ALGORITHM_CENTER;
+import static util.Constants.DDEM_PROBABILITY_ALGORITHM_HEIGHT;
+import static util.Constants.DDEM_PROBABILITY_ALGORITHM_WIDTH;
+import static util.Constants.INDICATOR_CENTER;
+import static util.Constants.LIFE_ANIMATION_CENTER;
+import static util.Constants.PLAY_SCREEN_MENU_BUTTON_CENTER;
+import static util.Constants.PROGRESS_BAR_WIDTH;
+import static util.Constants.SSH_INTO_A_SUPERCOMPUTER_CENTER;
+import static util.Constants.SSH_INTO_A_SUPERCOMPUTER_HEIGHT;
+import static util.Constants.SSH_INTO_A_SUPERCOMPUTER_WIDTH;
+import static util.Constants.UI_BUTTON_CENTER;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
@@ -30,24 +46,7 @@ import util.Constants;
 import util.Enums.Difficulty;
 import util.Util;
 
-import static util.Constants.BITCOIN_LOGO_WIDTH;
-import static util.Constants.CALL_ANOTHER_HACKER_CENTER;
-import static util.Constants.CALL_ANOTHER_HACKER_HEIGHT;
-import static util.Constants.CALL_ANOTHER_HACKER_WIDTH;
-import static util.Constants.DDEM_PROBABILITY_ALGORITHM_CENTER;
-import static util.Constants.DDEM_PROBABILITY_ALGORITHM_HEIGHT;
-import static util.Constants.DDEM_PROBABILITY_ALGORITHM_WIDTH;
-import static util.Constants.INDICATOR_CENTER;
-import static util.Constants.LIFE_ANIMATION_CENTER;
-import static util.Constants.PLAY_SCREEN_MENU_BUTTON_CENTER;
-import static util.Constants.PROGRESS_BAR_WIDTH;
-import static util.Constants.SSH_INTO_A_SUPERCOMPUTER_CENTER;
-import static util.Constants.SSH_INTO_A_SUPERCOMPUTER_HEIGHT;
-import static util.Constants.SSH_INTO_A_SUPERCOMPUTER_WIDTH;
-import static util.Constants.UI_BUTTON_CENTER;
-
 public class GameplayScreen extends InputAdapter implements Screen {
-
     public static final String TAG = GameplayScreen.class.getName();
 
     private HackerGame hackerGame;
@@ -59,11 +58,9 @@ public class GameplayScreen extends InputAdapter implements Screen {
     private PlayScreenButton playScreenButton;
     private boolean correct;
     private boolean wrong;
-
     private long roundElapsedTime;
     private String correctChoice;
     private Difficulty difficulty;
-
     private Random rand;
     private double[] randomDouble;
     private ArrayList<Double> dummyDoubles;
@@ -93,6 +90,11 @@ public class GameplayScreen extends InputAdapter implements Screen {
     private boolean choiceCIsActive;
     private boolean choiceDIsActive;
 
+    private boolean choiceAIsClicked;
+    private boolean choiceBIsClicked;
+    private boolean choiceCIsClicked;
+    private boolean choiceDIsClicked;
+
     private List<Character> choices;
     private ArrayList<Character> remove;
 
@@ -110,6 +112,18 @@ public class GameplayScreen extends InputAdapter implements Screen {
     private int gameOverSoundIndex;
     private int victorySoundIndex;
 
+    private Vector2 questionCenter;
+    private Rectangle questionRectangleBounds;
+    private Vector2 choiceAButtonCenterText;
+    private Rectangle choiceAButtonBoundingBoxText;
+    private Vector2 choiceCButtonCenterText;
+    private Rectangle choiceCButtonBoundingBoxText;
+    private Vector2 choiceBButtonCenterText;
+    private Rectangle choiceBButtonBoundingBoxText;
+    private Vector2 choiceDButtonCenterText;
+    private Rectangle choiceDButtonBoundingBoxText;
+    //private Vector2 topicCenter;
+    //private Rectangle topicRectangleBounds;
 
     public GameplayScreen(HackerGame hackerGame, Difficulty difficulty, SpriteBatch batch) {
         this.hackerGame = hackerGame;
@@ -166,6 +180,28 @@ public class GameplayScreen extends InputAdapter implements Screen {
         questionsCounter = 0;
 
         userCounter = 0;
+
+        //question
+        questionCenter = new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2); 
+        questionRectangleBounds = new Rectangle(questionCenter.x - Constants.QUESTION_BOX_WIDTH / 2, questionCenter.y - Constants.QUESTION_BOX_HEIGHT / 2, Constants.QUESTION_BOX_WIDTH, Constants.QUESTION_BOX_HEIGHT);
+
+        //choiceA
+        choiceAButtonCenterText = new Vector2(viewport.getCamera().viewportWidth / 4, viewport.getCamera().viewportHeight / 3.8f);
+        choiceAButtonBoundingBoxText = new Rectangle(choiceAButtonCenterText.x - Constants.PLAY_SCREEN_BUTTON_WIDTH / 2, choiceAButtonCenterText.y - Constants.PLAY_SCREEN_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_BUTTON_WIDTH, Constants.PLAY_SCREEN_BUTTON_HEIGHT);
+
+        //choiceB
+        choiceBButtonCenterText = new Vector2(viewport.getCamera().viewportWidth / 1.35f, viewport.getCamera().viewportHeight / 3.8f);
+        choiceBButtonBoundingBoxText = new Rectangle(choiceBButtonCenterText.x - Constants.PLAY_SCREEN_BUTTON_WIDTH / 2, choiceBButtonCenterText.y - Constants.PLAY_SCREEN_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_BUTTON_WIDTH, Constants.PLAY_SCREEN_BUTTON_HEIGHT);
+
+        //choiceC
+        choiceCButtonCenterText = new Vector2(viewport.getCamera().viewportWidth / 4, viewport.getCamera().viewportHeight / 4 - 100);
+        choiceCButtonBoundingBoxText = new Rectangle(choiceCButtonCenterText.x - Constants.PLAY_SCREEN_BUTTON_WIDTH / 2, choiceCButtonCenterText.y - Constants.PLAY_SCREEN_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_BUTTON_WIDTH, Constants.PLAY_SCREEN_BUTTON_HEIGHT);
+
+        //choiceD
+        choiceDButtonCenterText = new Vector2(viewport.getCamera().viewportWidth / 1.35f, viewport.getCamera().viewportHeight / 4 - 100);
+        choiceDButtonBoundingBoxText = new Rectangle(choiceDButtonCenterText.x - Constants.PLAY_SCREEN_BUTTON_WIDTH / 2, choiceDButtonCenterText.y - Constants.PLAY_SCREEN_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_BUTTON_WIDTH, Constants.PLAY_SCREEN_BUTTON_HEIGHT);
+
+
         Gdx.input.setInputProcessor(this);
     }
 
@@ -177,9 +213,7 @@ public class GameplayScreen extends InputAdapter implements Screen {
     @Override
     public void pause() {
 
-    }
-
-    @Override
+    } @Override
     public void resume() {
 
     }
@@ -252,35 +286,35 @@ public class GameplayScreen extends InputAdapter implements Screen {
         Vector2 worldTouch = viewport.unproject(new Vector2(screenX, screenY));
 
         //menu button
-        Vector2 playScreenMenuButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 7, viewport.getCamera().viewportHeight - 30);
+        Vector2 playScreenMenuButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 7, viewport.getCamera().viewportHeight - 20);
         Rectangle playScreenMenuButtonBoundingBox = new Rectangle(playScreenMenuButtonCenter.x - Constants.PLAY_SCREEN_MENU_BUTTON_WIDTH / 2, playScreenMenuButtonCenter.y - Constants.PLAY_SCREEN_MENU_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_MENU_BUTTON_WIDTH, Constants.PLAY_SCREEN_MENU_BUTTON_HEIGHT);
 
         //choiceA
-        Vector2 choiceAButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 4, viewport.getCamera().viewportHeight / 4 - 20);
+        Vector2 choiceAButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 4, viewport.getCamera().viewportHeight / 3.8f);
         Rectangle choiceAButtonBoundingBox = new Rectangle(choiceAButtonCenter.x - Constants.PLAY_SCREEN_BUTTON_WIDTH / 2, choiceAButtonCenter.y - Constants.PLAY_SCREEN_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_BUTTON_WIDTH, Constants.PLAY_SCREEN_BUTTON_HEIGHT);
 
         //choiceB
-        Vector2 choiceBButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 1.35f, viewport.getCamera().viewportHeight / 4 - 20);
+        Vector2 choiceBButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 1.35f, viewport.getCamera().viewportHeight / 3.8f);
         Rectangle choiceBButtonBoundingBox = new Rectangle(choiceBButtonCenter.x - Constants.PLAY_SCREEN_BUTTON_WIDTH / 2, choiceBButtonCenter.y - Constants.PLAY_SCREEN_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_BUTTON_WIDTH, Constants.PLAY_SCREEN_BUTTON_HEIGHT);
 
         //choiceC
-        Vector2 choiceCButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 4, viewport.getCamera().viewportHeight / 4 - 145);
+        Vector2 choiceCButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 4, viewport.getCamera().viewportHeight / 4 - 100);
         Rectangle choiceCButtonBoundingBox = new Rectangle(choiceCButtonCenter.x - Constants.PLAY_SCREEN_BUTTON_WIDTH / 2, choiceCButtonCenter.y - Constants.PLAY_SCREEN_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_BUTTON_WIDTH, Constants.PLAY_SCREEN_BUTTON_HEIGHT);
 
         //choiceD
-        Vector2 choiceDButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 1.35f, viewport.getCamera().viewportHeight / 4 - 145);
+        Vector2 choiceDButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 1.35f, viewport.getCamera().viewportHeight / 4 - 100);
         Rectangle choiceDButtonBoundingBox = new Rectangle(choiceDButtonCenter.x - Constants.PLAY_SCREEN_BUTTON_WIDTH / 2, choiceDButtonCenter.y - Constants.PLAY_SCREEN_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_BUTTON_WIDTH, Constants.PLAY_SCREEN_BUTTON_HEIGHT);
 
         //callAnotherHackerButton attributes
-        Vector2 callAnotherHackerButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 14, viewport.getCamera().viewportHeight - CALL_ANOTHER_HACKER_HEIGHT - 60);
+        Vector2 callAnotherHackerButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 18, viewport.getCamera().viewportHeight - CALL_ANOTHER_HACKER_HEIGHT - 50);
         Rectangle callAnotherHackerButtonBoundingBox = new Rectangle(callAnotherHackerButtonCenter.x - Constants.CALL_ANOTHER_HACKER_WIDTH / 2, callAnotherHackerButtonCenter.y - CALL_ANOTHER_HACKER_HEIGHT / 2, CALL_ANOTHER_HACKER_WIDTH, CALL_ANOTHER_HACKER_HEIGHT);
 
         //sshIntoASuperComputerButton attributes
-        Vector2 sshIntoASuperComputerButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 7, viewport.getCamera().viewportHeight - SSH_INTO_A_SUPERCOMPUTER_HEIGHT - 60);
+        Vector2 sshIntoASuperComputerButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 8, viewport.getCamera().viewportHeight - SSH_INTO_A_SUPERCOMPUTER_HEIGHT - 50);
         Rectangle sshIntoASuperComputerButtonBoundingBox = new Rectangle(sshIntoASuperComputerButtonCenter.x - Constants.SSH_INTO_A_SUPERCOMPUTER_WIDTH / 2, sshIntoASuperComputerButtonCenter.y - SSH_INTO_A_SUPERCOMPUTER_HEIGHT / 2, SSH_INTO_A_SUPERCOMPUTER_WIDTH, SSH_INTO_A_SUPERCOMPUTER_HEIGHT);
 
         //ddemProbabilityAlgorithmButton attributes
-        Vector2 ddemProbabilityAlgorithmButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 4.5f, viewport.getCamera().viewportHeight - DDEM_PROBABILITY_ALGORITHM_HEIGHT - 60);
+        Vector2 ddemProbabilityAlgorithmButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 5, viewport.getCamera().viewportHeight - DDEM_PROBABILITY_ALGORITHM_HEIGHT - 50);
         Rectangle ddemProbabilityAlgorithmButtonBoundingBox = new Rectangle(ddemProbabilityAlgorithmButtonCenter.x - DDEM_PROBABILITY_ALGORITHM_WIDTH / 2, ddemProbabilityAlgorithmButtonCenter.y - DDEM_PROBABILITY_ALGORITHM_HEIGHT / 2, DDEM_PROBABILITY_ALGORITHM_WIDTH, DDEM_PROBABILITY_ALGORITHM_HEIGHT);
 
         if (chances >= 0 && progressCounter <= 30) {
@@ -337,6 +371,12 @@ public class GameplayScreen extends InputAdapter implements Screen {
                 }
             }
         }
+
+        choiceAIsClicked = choiceAButtonBoundingBox.contains(worldTouch);
+        choiceCIsClicked = choiceCButtonBoundingBox.contains(worldTouch);
+        choiceBIsClicked = choiceBButtonBoundingBox.contains(worldTouch);
+        choiceDIsClicked = choiceDButtonBoundingBox.contains(worldTouch);
+
 
         if (chances < 0 || progressCounter > 30) {
             //tryAgain attributes
@@ -524,14 +564,14 @@ public class GameplayScreen extends InputAdapter implements Screen {
         if(chances >= 0 && progressCounter <= 30){
 
             questions.initializeQuestions();
-            Assets.instance.font.drawGlitchEsportsFont(batch, "question", questions.getQuestion());
+            Assets.instance.font.drawGlitchEsportsFont(batch, "question", questions.getQuestion(), this.questionRectangleBounds);
 
-          /*
-        ACTION CASES:
-        (1) Call another hacker - display playScreen Button in green (100% reliable)
-        (2) SSH into a supercomputer - randomly remove TWO incorrect answers (50% reliable)
-        (3) DDEM Probability Algorithm - display in percentages the most likely answer (25% reliable)
-         */
+            /*
+               ACTION CASES:
+               (1) Call another hacker - display playScreen Button in green (100% reliable)
+               (2) SSH into a supercomputer - randomly remove TWO incorrect answers (50% reliable)
+               (3) DDEM Probability Algorithm - display in percentages the most likely answer (25% reliable)
+               */
 
             //Case (1) Call another hacker and Case (3) DDEM Probability Algorithm don't need a special case for the questions
 
@@ -542,77 +582,77 @@ public class GameplayScreen extends InputAdapter implements Screen {
                 switch (correctChoice) {
                     case "A":
                         //A
-                        Assets.instance.font.drawGlitchEsportsFont(batch, "choiceA", questions.getChoiceA());
+                        Assets.instance.font.drawGlitchEsportsFont(batch, "choiceA", questions.getChoiceA(), this.choiceAButtonBoundingBoxText);
 
                         if (!remove.contains('B')) { //remove C, D AND display B, A
                             //B
-                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceB", questions.getChoiceB());
+                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceB", questions.getChoiceB(), this.choiceBButtonBoundingBoxText);
                         } else if (!remove.contains('C')) { //remove B, D AND display C, A
                             //C
-                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceC", questions.getChoiceC());
+                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceC", questions.getChoiceC(), this.choiceCButtonBoundingBoxText);
                         } else if (!remove.contains('D')) { //remove B, C AND display D, A
                             //D
-                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceD", questions.getChoiceD());
+                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceD", questions.getChoiceD(), this.choiceDButtonBoundingBoxText);
                         }
                         break;
                     case "B":
                         //B
-                        Assets.instance.font.drawGlitchEsportsFont(batch, "choiceB", questions.getChoiceB());
+                        Assets.instance.font.drawGlitchEsportsFont(batch, "choiceB", questions.getChoiceB(), this.choiceBButtonBoundingBoxText);
 
                         if (!remove.contains('A')) { //remove C, D AND display A, B
                             //A
-                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceA", questions.getChoiceA());
+                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceA", questions.getChoiceA(), this.choiceAButtonBoundingBoxText);
                         } else if (!remove.contains('C')) { //remove A, D AND display C, B
                             //C
-                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceC", questions.getChoiceC());
+                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceC", questions.getChoiceC(), this.choiceCButtonBoundingBoxText);
                         } else if (!remove.contains('D')) { //remove A, C AND display D, B
                             //D
-                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceD", questions.getChoiceD());
+                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceD", questions.getChoiceD(), this.choiceDButtonBoundingBoxText);
                         }
                         break;
                     case "C":
                         //C
-                        Assets.instance.font.drawGlitchEsportsFont(batch, "choiceC", questions.getChoiceC());
+                        Assets.instance.font.drawGlitchEsportsFont(batch, "choiceC", questions.getChoiceC(), this.choiceCButtonBoundingBoxText);
 
                         if (!remove.contains('A')) { //remove B, D AND display A, C
                             //A
-                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceA", questions.getChoiceA());
+                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceA", questions.getChoiceA(), this.choiceAButtonBoundingBoxText);
                         } else if (!remove.contains('B')) { //remove A, D AND display B, C
                             //B
-                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceB", questions.getChoiceB());
+                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceB", questions.getChoiceB(), this.choiceBButtonBoundingBoxText);
                         } else if (!remove.contains('D')) { //remove A, B AND display D, C
                             //D
-                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceD", questions.getChoiceD());
+                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceD", questions.getChoiceD(), this.choiceDButtonBoundingBoxText);
                         }
                         break;
                     case "D":
                         //D
-                        Assets.instance.font.drawGlitchEsportsFont(batch, "choiceD", questions.getChoiceD());
+                        Assets.instance.font.drawGlitchEsportsFont(batch, "choiceD", questions.getChoiceD(), this.choiceDButtonBoundingBoxText);
 
                         if (!remove.contains('A')) { //remove B, C AND display A, D
                             //A
-                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceA", questions.getChoiceA());
+                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceA", questions.getChoiceA(), this.choiceAButtonBoundingBoxText);
                         } else if (!remove.contains('B')) { //remove A, C AND display B, D
                             //B
-                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceB", questions.getChoiceB());
+                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceB", questions.getChoiceB(), this.choiceBButtonBoundingBoxText);
                         } else if (!remove.contains('C')) { //remove A, B AND display C, D
                             //C
-                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceC", questions.getChoiceC());
+                            Assets.instance.font.drawGlitchEsportsFont(batch, "choiceC", questions.getChoiceC(), this.choiceCButtonBoundingBoxText);
                         }
                         break;
                 }
             } else {
                 //A
-                Assets.instance.font.drawGlitchEsportsFont(batch, "choiceA", questions.getChoiceA());
+                Assets.instance.font.drawGlitchEsportsFont(batch, "choiceA", questions.getChoiceA(), this.choiceAButtonBoundingBoxText);
 
                 //C
-                Assets.instance.font.drawGlitchEsportsFont(batch, "choiceC", questions.getChoiceC());
+                Assets.instance.font.drawGlitchEsportsFont(batch, "choiceC", questions.getChoiceC(), this.choiceCButtonBoundingBoxText);
 
                 //B
-                Assets.instance.font.drawGlitchEsportsFont(batch, "choiceB", questions.getChoiceB());
+                Assets.instance.font.drawGlitchEsportsFont(batch, "choiceB", questions.getChoiceB(), this.choiceBButtonBoundingBoxText);
 
                 //D
-                Assets.instance.font.drawGlitchEsportsFont(batch, "choiceD", questions.getChoiceD());
+                Assets.instance.font.drawGlitchEsportsFont(batch, "choiceD", questions.getChoiceD(), this.choiceDButtonBoundingBoxText);
 
                 correctChoice = questions.getCorrectChoice();
             }
@@ -640,17 +680,17 @@ public class GameplayScreen extends InputAdapter implements Screen {
 
     public void renderUI(SpriteBatch batch) {
         Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.playScreenBG, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2), Constants.BG_CENTER);
-        Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.playScreenMenuButton, new Vector2(viewport.getCamera().viewportWidth / 7, viewport.getCamera().viewportHeight - 30), PLAY_SCREEN_MENU_BUTTON_CENTER);
+        Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.playScreenMenuButton, new Vector2(viewport.getCamera().viewportWidth / 7, viewport.getCamera().viewportHeight - 20), PLAY_SCREEN_MENU_BUTTON_CENTER);
 
-        Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.correctIndicator1, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 - 160), INDICATOR_CENTER);
+        Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.correctIndicator1, new Vector2(viewport.getCamera().viewportWidth / 2, viewport.getCamera().viewportHeight / 2 - 100), INDICATOR_CENTER);
 
         if (chances >= 0 && progressCounter <= 30) { //ONLY update when game is not yet over
             /*
-        ACTION CASES:
-        (1) Call another hacker - display playScreen Button in green (100% reliable)
-        (2) SSH into a supercomputer - randomly remove TWO incorrect answers (50% reliable)
-        (3) DDEM Probability Algorithm - display in percentages the most likely answer (25% reliable)
-         */
+               ACTION CASES:
+               (1) Call another hacker - display playScreen Button in green (100% reliable)
+               (2) SSH into a supercomputer - randomly remove TWO incorrect answers (50% reliable)
+               (3) DDEM Probability Algorithm - display in percentages the most likely answer (25% reliable)
+               */
 
             if (callAnotherHackerCtr == 0 || sshIntoASuperComputerCtr == 0 || ddemProbabilityAlgorithmCtr == 0) {
 
@@ -867,13 +907,13 @@ public class GameplayScreen extends InputAdapter implements Screen {
                 if (ddemProbabilityAlgorithmCtr == 0) { //Case (3) DDEM Probability Algorithm
                     if (ddemProbabilityAlgorithmCurrentQuestion == questionsCounter) {
                         Gdx.app.log(TAG, "DDEM PROBABILITY ALGORITHM");
-                /*
-                Step 1: Generate four random numbers between 0 and 1
-                Step 2: Add these four numbers
-                Step 3: Divide each of the four numbers by the sum,
-                Step 4: Multiply by 100, and round to the nearest integer.
-                https://stackoverflow.com/questions/31229201/4-random-numbers-totaling-100
-                 */
+                        /*
+                           Step 1: Generate four random numbers between 0 and 1
+                           Step 2: Add these four numbers
+                           Step 3: Divide each of the four numbers by the sum,
+                           Step 4: Multiply by 100, and round to the nearest integer.
+                           https://stackoverflow.com/questions/31229201/4-random-numbers-totaling-100
+                        */
 
 
                         if (ddemStartTime == 0) {
@@ -900,10 +940,10 @@ public class GameplayScreen extends InputAdapter implements Screen {
                             if (rand.nextInt(100) < 25) {  //25% chance of showing the correct answer. The highest percentage is the correct answer.
                                 lucky = true;
 
-                        /*
-                         Generate random values to display, the highest percentage is the correct answer.
-                         In the case that two of the highest values are equal, then the player is unlucky and has to guess.
-                         */
+                                /*
+                                   Generate random values to display, the highest percentage is the correct answer.
+                                   In the case that two of the highest values are equal, then the player is unlucky and has to guess.
+                                   */
 
                                 //get the max value
                                 for (int i = 0; i < randomDouble.length; i++) {
@@ -994,7 +1034,7 @@ public class GameplayScreen extends InputAdapter implements Screen {
                                         }
                                         Assets.instance.font.drawGlitchEsportsFont(batch, "percentageA", valueA + "%");
                                         Assets.instance.font.drawGlitchEsportsFont(batch, "percentageD", valueD + "%");
-                                     }
+                                    }
                                 } else {
                                     if (callAnotherHackerCtr == 0) {
                                         playScreenButton.renderButton(batch, "CorrectA", "B", "C", "D");
@@ -1157,15 +1197,15 @@ public class GameplayScreen extends InputAdapter implements Screen {
             }
 
             //callAnotherHackerButton attributes
-            Vector2 callAnotherHackerButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 14, viewport.getCamera().viewportHeight - CALL_ANOTHER_HACKER_HEIGHT - 60);
+            Vector2 callAnotherHackerButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 18, viewport.getCamera().viewportHeight - CALL_ANOTHER_HACKER_HEIGHT - 50);
             Rectangle callAnotherHackerButtonBoundingBox = new Rectangle(callAnotherHackerButtonCenter.x - Constants.CALL_ANOTHER_HACKER_WIDTH / 2, callAnotherHackerButtonCenter.y - CALL_ANOTHER_HACKER_HEIGHT / 2, CALL_ANOTHER_HACKER_WIDTH, CALL_ANOTHER_HACKER_HEIGHT);
 
             //sshIntoASuperComputerButton attributes
-            Vector2 sshIntoASuperComputerButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 7, viewport.getCamera().viewportHeight - SSH_INTO_A_SUPERCOMPUTER_HEIGHT - 60);
+            Vector2 sshIntoASuperComputerButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 8, viewport.getCamera().viewportHeight - SSH_INTO_A_SUPERCOMPUTER_HEIGHT - 50);
             Rectangle sshIntoASuperComputerButtonBoundingBox = new Rectangle(sshIntoASuperComputerButtonCenter.x - Constants.SSH_INTO_A_SUPERCOMPUTER_WIDTH / 2, sshIntoASuperComputerButtonCenter.y - SSH_INTO_A_SUPERCOMPUTER_HEIGHT / 2, SSH_INTO_A_SUPERCOMPUTER_WIDTH, SSH_INTO_A_SUPERCOMPUTER_HEIGHT);
 
             //ddemProbabilityAlgorithmButton attributes
-            Vector2 ddemProbabilityAlgorithmButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 4.5f, viewport.getCamera().viewportHeight - DDEM_PROBABILITY_ALGORITHM_HEIGHT - 60);
+            Vector2 ddemProbabilityAlgorithmButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 5, viewport.getCamera().viewportHeight - DDEM_PROBABILITY_ALGORITHM_HEIGHT - 50);
             Rectangle ddemProbabilityAlgorithmButtonBoundingBox = new Rectangle(ddemProbabilityAlgorithmButtonCenter.x - DDEM_PROBABILITY_ALGORITHM_WIDTH / 2, ddemProbabilityAlgorithmButtonCenter.y - DDEM_PROBABILITY_ALGORITHM_HEIGHT / 2, DDEM_PROBABILITY_ALGORITHM_WIDTH, DDEM_PROBABILITY_ALGORITHM_HEIGHT);
 
             Vector2 mousePosition = viewport.unproject(new Vector2(Gdx.input.getX(), Gdx.input.getY()));
@@ -1189,9 +1229,9 @@ public class GameplayScreen extends InputAdapter implements Screen {
             if (ddemProbabilityAlgorithmButtonBoundingBox.contains(mousePosition)) {
                 if (ddemProbabilityAlgorithmCtr == 1) {
                     Assets.instance.font.drawGlitchEsportsFont(batch, "actionBlue","DDEM PROBABILITY ALGORITHM");
-            } else if (ddemProbabilityAlgorithmCtr < 1) {
+                } else if (ddemProbabilityAlgorithmCtr < 1) {
                     Assets.instance.font.drawGlitchEsportsFont(batch, "actionRed","DDEM PROBABILITY ALGORITHM");
-}
+                }
             }
 
         } else {
@@ -1201,21 +1241,21 @@ public class GameplayScreen extends InputAdapter implements Screen {
 
 
         if (callAnotherHackerCtr == 1) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.callAnotherHacker, new Vector2(viewport.getCamera().viewportWidth / 14, viewport.getCamera().viewportHeight - CALL_ANOTHER_HACKER_HEIGHT - 60), CALL_ANOTHER_HACKER_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.callAnotherHacker, new Vector2(viewport.getCamera().viewportWidth / 18, viewport.getCamera().viewportHeight - CALL_ANOTHER_HACKER_HEIGHT - 50), CALL_ANOTHER_HACKER_CENTER);
         } else if (callAnotherHackerCtr < 1) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.callAnotherHackerDisabled, new Vector2(viewport.getCamera().viewportWidth / 14, viewport.getCamera().viewportHeight - CALL_ANOTHER_HACKER_HEIGHT - 60), CALL_ANOTHER_HACKER_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.callAnotherHackerDisabled, new Vector2(viewport.getCamera().viewportWidth / 18, viewport.getCamera().viewportHeight - CALL_ANOTHER_HACKER_HEIGHT - 50), CALL_ANOTHER_HACKER_CENTER);
         }
 
         if (sshIntoASuperComputerCtr == 1) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.sshIntoASuperComputer, new Vector2(viewport.getCamera().viewportWidth / 7, viewport.getCamera().viewportHeight - SSH_INTO_A_SUPERCOMPUTER_HEIGHT - 60), SSH_INTO_A_SUPERCOMPUTER_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.sshIntoASuperComputer, new Vector2(viewport.getCamera().viewportWidth / 8, viewport.getCamera().viewportHeight - SSH_INTO_A_SUPERCOMPUTER_HEIGHT - 50), SSH_INTO_A_SUPERCOMPUTER_CENTER);
         } else if (sshIntoASuperComputerCtr < 1) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.sshIntoASuperComputerDisabled, new Vector2(viewport.getCamera().viewportWidth / 7, viewport.getCamera().viewportHeight - SSH_INTO_A_SUPERCOMPUTER_HEIGHT - 60), SSH_INTO_A_SUPERCOMPUTER_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.sshIntoASuperComputerDisabled, new Vector2(viewport.getCamera().viewportWidth / 8, viewport.getCamera().viewportHeight - SSH_INTO_A_SUPERCOMPUTER_HEIGHT - 50), SSH_INTO_A_SUPERCOMPUTER_CENTER);
         }
 
         if (ddemProbabilityAlgorithmCtr == 1) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.ddemProbabilityAlgorithm, new Vector2(viewport.getCamera().viewportWidth / 4.5f, viewport.getCamera().viewportHeight - DDEM_PROBABILITY_ALGORITHM_HEIGHT - 60), DDEM_PROBABILITY_ALGORITHM_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.ddemProbabilityAlgorithm, new Vector2(viewport.getCamera().viewportWidth / 5, viewport.getCamera().viewportHeight - DDEM_PROBABILITY_ALGORITHM_HEIGHT - 50), DDEM_PROBABILITY_ALGORITHM_CENTER);
         } else if (ddemProbabilityAlgorithmCtr < 1) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.ddemProbabilityAlgorithmDisabled, new Vector2(viewport.getCamera().viewportWidth / 4.5f, viewport.getCamera().viewportHeight - DDEM_PROBABILITY_ALGORITHM_HEIGHT - 60), DDEM_PROBABILITY_ALGORITHM_CENTER);
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.ddemProbabilityAlgorithmDisabled, new Vector2(viewport.getCamera().viewportWidth / 5, viewport.getCamera().viewportHeight - DDEM_PROBABILITY_ALGORITHM_HEIGHT - 50), DDEM_PROBABILITY_ALGORITHM_CENTER);
         }
 
 
@@ -1234,67 +1274,67 @@ public class GameplayScreen extends InputAdapter implements Screen {
         }
 
         if (progressCounter == 1) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar1, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar1, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 2) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar2, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar2, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 3) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar3, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar3, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 4) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar4, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar4, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 5) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar5, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar5, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 6) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar6, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar6, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 7) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar7, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar7, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 8) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar8, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar8, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 9) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar9, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar9, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 10) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar10, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar10, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 11) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar11, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar11, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 12) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar12, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar12, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 13) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar13, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar13, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 14) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar14, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar14, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 15) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar15, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar15, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 16) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar16, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar16, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 17) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar17, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar17, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 18) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar18, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar18, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 19) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar19, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar19, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 20) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar20, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar20, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 21) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar21, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar21, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 22) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar22, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar22, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 23) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar23, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar23, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 24) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar24, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar24, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 25) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar25, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar25, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 26) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar26, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar26, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 27) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar27, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar27, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 28) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar28, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar28, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 29) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar29, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar29, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else if (progressCounter == 30) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar30, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar30, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         } else {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar30, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH) / 1.10f, viewport.getCamera().viewportHeight / 1.16f));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.progressBar30, new Vector2((viewport.getCamera().viewportWidth - PROGRESS_BAR_WIDTH), viewport.getCamera().viewportHeight / 1.16f));
         }
 
         if (roundElapsedTime == 0) {
@@ -1314,10 +1354,10 @@ public class GameplayScreen extends InputAdapter implements Screen {
         df.setRoundingMode(RoundingMode.CEILING);
 
         Assets.instance.font.drawDSDigibFont(batch, "score30", String.valueOf(df.format(score)));
-        Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.bitcoinLogo, new Vector2((viewport.getCamera().viewportWidth - BITCOIN_LOGO_WIDTH) / 1.4f, viewport.getCamera().viewportHeight - 85));
+        Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.bitcoinLogo, new Vector2((viewport.getCamera().viewportWidth - BITCOIN_LOGO_WIDTH) / 1.4f, viewport.getCamera().viewportHeight - 65));
 
         if (chances < 0 || progressCounter > 30) {
-            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.bitcoinLogo, new Vector2((viewport.getCamera().viewportWidth - BITCOIN_LOGO_WIDTH) / 1.4f, viewport.getCamera().viewportHeight - 85));
+            Util.drawTextureRegion(batch, Assets.instance.playScreenAssets.bitcoinLogo, new Vector2((viewport.getCamera().viewportWidth - BITCOIN_LOGO_WIDTH) / 1.4f, viewport.getCamera().viewportHeight - 65));
             Assets.instance.font.drawDSDigibFont(batch, "score30", String.valueOf(df.format(score)));
             Assets.instance.font.drawDSDigibFont(batch, "score100", String.valueOf(df.format(score)));
             Assets.instance.font.drawGlitchEsportsFont(batch, "bitcoins", "TOTAL BITCOIN EARNINGS:");
@@ -1345,6 +1385,37 @@ public class GameplayScreen extends InputAdapter implements Screen {
     public void resetRoundElapsedTime() {
         this.roundElapsedTime = 0;
     }
+
+    /*
+   private void initTextBounds() { 
+       questionCenter = new Vector2(this.viewport.getCamera().viewportWidth / 2, this.viewport.getCamera().viewportHeight / 1.7f);
+       questionRectangleBounds = new Rectangle(questionCenter.x - Constants.QUESTIONBUBBLE_WIDTH / 2, questionCenter.y - Constants.QUESTIONBUBBLE_HEIGHT / 2, Constants.QUESTIONBUBBLE_WIDTH, Constants.QUESTIONBUBBLE_HEIGHT);
+
+       instructionCenter = new Vector2(this.viewport.getCamera().viewportWidth / 2, this.viewport.getCamera().viewportHeight / 1.6f);
+       instructionRectangleBounds = new Rectangle(instructionCenter.x - Constants.QUESTIONBUBBLE_WIDTH / 2, instructionCenter.y - Constants.QUESTIONBUBBLE_HEIGHT / 2, Constants.QUESTIONBUBBLE_WIDTH, Constants.QUESTIONBUBBLE_HEIGHT);
+
+       //choiceA
+       choiceAButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 4, viewport.getCamera().viewportHeight / 4 - 20);
+       choiceAButtonBoundingBox = new Rectangle(choiceAButtonCenter.x - Constants.PLAY_SCREEN_BUTTON_WIDTH / 2, choiceAButtonCenter.y - Constants.PLAY_SCREEN_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_BUTTON_WIDTH, Constants.PLAY_SCREEN_BUTTON_HEIGHT);
+
+      //choiceB 
+       choiceBButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 1.35f, viewport.getCamera().viewportHeight / 4 - 20);
+       choiceBButtonBoundingBox = new Rectangle(choiceBButtonCenter.x - Constants.PLAY_SCREEN_BUTTON_WIDTH / 2, choiceBButtonCenter.y - Constants.PLAY_SCREEN_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_BUTTON_WIDTH, Constants.PLAY_SCREEN_BUTTON_HEIGHT);
+
+      //choiceC 
+       choiceCButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 4, viewport.getCamera().viewportHeight / 4 - 145);
+       choiceCButtonBoundingBox = new Rectangle(choiceCButtonCenter.x - Constants.PLAY_SCREEN_BUTTON_WIDTH / 2, choiceCButtonCenter.y - Constants.PLAY_SCREEN_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_BUTTON_WIDTH, Constants.PLAY_SCREEN_BUTTON_HEIGHT);
+
+      //choiceD 
+       choiceDButtonCenter = new Vector2(viewport.getCamera().viewportWidth / 1.35f, viewport.getCamera().viewportHeight / 4 - 145);
+       choiceDButtonBoundingBox = new Rectangle(choiceDButtonCenter.x - Constants.PLAY_SCREEN_BUTTON_WIDTH / 2, choiceDButtonCenter.y - Constants.PLAY_SCREEN_BUTTON_HEIGHT / 2, Constants.PLAY_SCREEN_BUTTON_WIDTH, Constants.PLAY_SCREEN_BUTTON_HEIGHT);
+
+       //topic
+       //topicCenter = new Vector2(viewport.getCamera().viewportWidth / 4f, viewport.getCamera().viewportHeight / 1.20f);
+       //topicRectangleBounds = new Rectangle(topicCenter.x - Constants.ANSWERBUBBLE_BUTTON_WIDTH / 2, topicCenter.y - Constants.ANSWERBUBBLE_BUTTON_HEIGHT / 2, Constants.ANSWERBUBBLE_BUTTON_WIDTH, Constants.ANSWERBUBBLE_BUTTON_HEIGHT);
+   }
+*/
+
 
 }
 
